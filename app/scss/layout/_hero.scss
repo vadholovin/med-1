@@ -1,0 +1,48 @@
+/* ==========================================================================
+   #HERO
+   ========================================================================== */
+
+.hero {
+  padding-top: rem(46px);
+  padding-bottom: rem(34px);
+  background-color: #8e2c3b;
+
+  @include for-size(lg-up) {
+    padding-top: rem(64px);
+    padding-bottom: rem(64px);
+  }
+}
+
+.hero__title {
+  font-size: calc(1rem + 10.625vw);
+  color: #fff;
+
+  @include for-size(sm-up) {
+    font-size: calc(1rem + 5.83vw);
+  }
+
+  @include for-size(xl-up) {
+    font-size: rem(100px);
+  }
+}
+
+.hero__title .title--smaller {
+  margin-top: rem(16px);
+  font-size: calc(1rem + 0.625vw);
+  
+
+  @include for-size(xs-only) {
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include for-size(sm-up) {
+    font-size: calc(1rem + 0.97vw);
+  }
+
+  @include for-size(xl-up) {
+    margin-top: rem(6px);
+    font-size: rem(30px);
+  }
+}

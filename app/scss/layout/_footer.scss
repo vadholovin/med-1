@@ -1,0 +1,67 @@
+/* ==========================================================================
+   #FOOTER
+   ========================================================================== */
+
+.footer {
+  text-transform: none;
+}
+
+.footer-top {
+  padding-top: rem(40px);
+  padding-bottom: rem(40px);
+  font-size: rem(18px);
+
+  @include for-size(xl-up) {
+    padding-top: rem(46px);
+    padding-bottom: rem(46px);
+    font-size: rem(20px);
+  }
+}
+
+.footer-top__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @include for-size(xs-only) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.footer-mid {
+  padding-top: rem(30px);
+  padding-bottom: rem(30px);
+  background-color: $bg-grey;
+  color: #fff;
+  text-align: center;
+
+  padding-top: rem(25px);
+  padding-bottom: rem(18px);
+}
+
+.footer-mid__info {
+  font-weight: bold;
+  font-size: rem(22px);
+  text-transform: uppercase;
+
+  @include for-size(xl-up) {
+    font-size: rem(30px);
+  }
+}
+
+.footer-bottom {
+  padding-top: rem(30px);
+  padding-bottom: rem(30px);
+  font-size: rem(16px);
+
+  @include for-size(xs-only) {
+    text-align: center;
+  }
+
+  @include for-size(xl-up) {
+    padding-top: rem(60px);
+    padding-bottom: rem(76px);
+    font-size: rem(20px);
+  }
+}

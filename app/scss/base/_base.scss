@@ -1,0 +1,234 @@
+/* ==========================================================================
+   #BASE STYLES
+   ========================================================================== */
+html {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+
+sup {
+  position: relative;
+  top: -.5em;
+  font-size: 60%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-style: none;
+}
+
+b {
+  font-weight: bolder;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.25;
+}
+
+input, textarea, select, button {
+  color: inherit;
+  font-family: inherit;
+}
+
+.container {
+  width: 100%;
+
+  @include for-size(xs-only) {
+    padding-left: rem(8px);
+    padding-right: rem(8px);
+  }
+
+  @include for-size(sm-up) {
+    padding-left: rem(24px);
+    padding-right: rem(24px);
+  }
+
+  @include for-size(md-up) {
+    padding-left: rem(32px);
+    padding-right: rem(32px);
+  }
+
+  @include for-size(lg-up) {
+    padding-left: rem(64px);
+    padding-right: rem(64px);
+  }
+
+  @include for-size(xl-up) {
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.logo {
+  display: block;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.logo--header {
+  width: 119px;
+  margin-right: auto;
+
+  @include for-size(lg-up) {
+    width: 165px;
+  }
+}
+
+.logo--footer {
+  width: 134px;
+
+  @include for-size(xs-only) {
+    margin-bottom: rem(34px);
+  }
+
+  @include for-size(sm-up) {
+    margin-right: auto;
+  }
+
+  @include for-size(lg-up) {
+    width: 191px;
+  }
+}
+
+.hamburger {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  padding-left: 4.5px;
+  padding-right: 4.5px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  transition: opacity $ease-main;
+  cursor: pointer;
+
+  @include for-size(xs-only) {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+}
+
+.hamburger-icon {
+  pointer-events: none;
+}
+
+.link-underline {
+  border-bottom: 1px solid currentColor;
+  text-decoration: none;
+  transition: border-color $ease-main;
+
+  &:hover {
+    text-decoration: none;
+    border-color: rgba(#000, 0);
+  }
+}
+
+.highlight {
+  color: $highlight;
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  font-size: calc(1rem + 5.3125vw);
+  
+  @include for-size(sm-up) {
+    font-size: calc(1rem + 3.194vw);
+  }
+
+  @include for-size(xl-up) {
+    font-size: rem(62px);
+  }
+}
+
+.title--smaller {
+  display: block;
+  margin-top: rem(16px);
+  font-weight: normal;
+  font-size: calc(1rem + 0.625vw);
+  
+  @include for-size(sm-up) {
+    font-size: calc(1rem + 0.97vw);
+  }
+
+  @include for-size(xl-up) {
+    margin-top: rem(6px);
+    font-size: rem(30px);
+  }
+}
+
+

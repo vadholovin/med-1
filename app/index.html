@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Acino</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800|Roboto:400,900&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <header class="header">
+      <div class="container">
+        <div class="header__row">
+          <a href="/" class="logo logo--header">
+            <svg class="logo-icon" viewBox="0 0 165 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 18.8088L18.1184 3.35441C23.2641 -1.03483 30.759 -1.06179 35.9131 2.95191C31.2288 1.13463 25.6992 1.88011 21.6351 5.34667L3.51672 20.801L0 18.8088Z" fill="#EF7C00"/>
+              <path d="M6.66864 22.5866L24.7869 7.13236C29.9326 2.74304 37.4275 2.71617 42.5816 6.72987C37.8972 4.91259 32.3678 5.65806 28.3035 9.12462L10.1853 24.579L6.66864 22.5866Z" fill="#EF7C00"/>
+              <path d="M13.3363 26.3649L31.4546 10.9102C36.6002 6.5211 44.0952 6.49415 49.2493 10.5077C44.5651 8.69056 39.0355 9.43594 34.9713 12.9026L16.853 28.3571L13.3363 26.3649Z" fill="#EF7C00"/>
+              <path d="M57.7423 27.1907L39.6235 42.6457C34.4777 47.0348 26.9829 47.0618 21.8287 43.0483C26.513 44.8653 32.0425 44.1201 36.1068 40.6534L54.2259 25.1984L57.7423 27.1907Z" fill="#C70B6F"/>
+              <path d="M51.0749 23.413L32.9561 38.8679C27.8103 43.2571 20.3152 43.2842 15.1613 39.2703C19.8454 41.0877 25.375 40.3421 29.4391 36.8757L47.5582 21.4205L51.0749 23.413Z" fill="#C70B6F"/>
+              <path d="M44.4061 19.6348L26.2871 35.0899C21.1413 39.4793 13.6464 39.5061 8.49249 35.4925C13.1767 37.3099 18.7063 36.5643 22.7704 33.0976L40.8894 17.6425L44.4061 19.6348Z" fill="#C70B6F"/>
+              <path d="M85.0288 19.3199C85.0288 14.7606 82.9786 11.9599 76.0939 11.9599C73.3404 11.9599 70.4901 12.6033 68.3393 13.3628L68.812 17.881C70.6196 16.8675 73.2011 16.2343 75.1374 16.2343C78.2356 16.2343 79.311 17.374 79.311 19.5695V20.7098C72.0397 20.7098 66.9618 23.3692 66.9618 28.3937C66.9618 31.7717 69.1849 34.04 73.0572 34.04C76.2415 34.04 78.9739 32.0916 80.0066 29.7274L79.9565 29.9561C79.7844 31.054 79.4225 32.8152 79.4225 34.04H85.0288V19.3199ZM79.311 24.721C79.311 27.254 77.4609 29.7872 74.75 29.7872C73.1586 29.7872 72.2117 28.9009 72.2117 27.5493C72.2117 25.8608 73.5024 24.214 79.311 24.214V24.721Z" fill="#39434D"/>
+              <path d="M104.65 33.0535L104.209 28.3804C103.017 28.9811 101.385 29.2806 99.8846 29.2806C96.1346 29.2806 94.6783 26.794 94.6783 23.1501C94.6783 19.1195 96.4873 16.5473 100.061 16.5473C101.474 16.5473 102.841 16.8901 104.033 17.3191L104.606 12.5599C103.194 12.1738 101.606 11.9599 100.106 11.9599C92.3401 11.9599 88.7658 17.062 88.7658 23.7075C88.7658 30.9529 92.5604 34.04 98.6495 34.04C100.988 34.04 103.15 33.6108 104.65 33.0535Z" fill="#39434D"/>
+              <path d="M139.223 18.5149C139.223 14.8908 137.665 11.9599 132.82 11.9599C129.316 11.9599 126.807 13.6677 125.509 16.125L125.465 16.0836C125.683 15.0006 126.142 12.9179 126.142 11.9599H120.534V34.04H126.142V23.1149C126.142 19.4915 128.278 16.4166 131.09 16.4166C133.123 16.4166 133.617 17.6139 133.617 19.7799V34.04H139.223V18.5149Z" fill="#39434D"/>
+              <path d="M164.45 22.5944C164.45 15.2911 160.601 11.9599 154.637 11.9599C148.25 11.9599 143.894 16.7431 143.894 23.3628C143.894 30.9223 147.742 34.04 153.707 34.04C160.009 34.04 164.45 29.2565 164.45 22.5944ZM158.867 22.893C158.867 27.2071 156.837 29.385 154.172 29.385C151.042 29.385 149.476 27.1641 149.476 22.8075C149.476 18.4518 151.845 16.5723 154.257 16.5723C157.428 16.5723 158.867 18.7932 158.867 22.893Z" fill="#39434D"/>
+              <path d="M114.928 34.04V11.9599H109.322V34.04H114.928Z" fill="#39434D"/>
+              <path d="M114.928 6.42227C114.928 4.89093 113.659 3.68021 112.108 3.68021C110.556 3.68021 109.322 4.92681 109.322 6.42227C109.322 7.95417 110.556 9.20021 112.108 9.20021C113.659 9.20021 114.928 7.95417 114.928 6.42227Z" fill="#39434D"/>
+            </svg>
+          </a>
+
+          <nav class="header__nav">
+            <ul class="header__menu menu">
+              <li class="menu__item">
+                <a href="">Пункт 1</a>
+              </li>
+              <li class="menu__item">
+                <a href="">Пункт 2</a>
+              </li>
+              <li class="menu__item">
+                <a href="">Пункт 3</a>
+              </li>
+              <li class="menu__item">
+                <a href="">Пункт 4</a>
+              </li>
+            </ul>
+
+            <button class="hamburger" aria-expanded="false" aria-label="Открыть меню">
+              <svg class="hamburger-icon" viewBox="0 0 35 29" aria-hidden="true" focusable="false" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line y1="1.5" x2="35" y2="1.5" stroke="#39434D" stroke-width="3"/>
+                <line y1="14.5" x2="35" y2="14.5" stroke="#39434D" stroke-width="3"/>
+                <line y1="27.5" x2="35" y2="27.5" stroke="#39434D" stroke-width="3"/>
+              </svg>
+            </button>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+
+    <main class="main">
+
+      <div class="hero">
+        <div class="container">
+          <h1 class="hero__title title">
+            Лечение ИППП
+            <span class="title--smaller">Информация для медицинских работников</span>
+          </h1>
+        </div>
+      </div>
+
+
+      <section class="causes">
+        <div class="container">
+          <h2 class="causes__title title">
+            Самые частые возбудители НГУ в 2019 г.
+            <span class="title--smaller">в клинической практике*</span>
+          </h2>
+
+          <div class="causes-charts">
+
+            <div class="causes-charts__item">
+              <div class="causes-charts__graph arc-graph progress-26">
+                <span class="arc-graph__value">26%</span>
+                <div class="pie">
+                  <div class="left-side half-circle"></div>
+                  <div class="right-side half-circle"></div>
+                </div>
+              </div>
+              <p class="causes-charts__name">Chlamydia Trachomatis</p>
+            </div>
+
+            <div class="causes-charts__item">
+              <div class="causes-charts__graph">
+                <span class="causes-charts__value">16%</span>
+              </div>
+              <p class="causes-charts__name">Mycoplasma, Sp</p>
+            </div>
+
+            <div class="causes-charts__item">
+              <div class="causes-charts__graph">
+                <span class="causes-charts__value">47%</span>
+              </div>
+              <p class="causes-charts__name">Ureoplasma, Sp</p>
+            </div>
+
+            <div class="causes-charts__item">
+              <div class="causes-charts__graph">
+                <span class="causes-charts__value">4%</span>
+              </div>
+              <p class="causes-charts__name">Trichomans Vaginalis</p>
+            </div>
+
+          </div>
+
+          <div class="causes__foot">
+            <p class="causes__notes">*По данным опроса практикующих врачей-урологов на портале doktornarabote.ru, Ноябрь 2019, 111 респондентов</p>
+            <a href="" class="causes__link link-underline highlight">Узнать полные результаты опроса</a>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="ethology">
+        <div class="container">
+          <h2 class="ethology__title title">
+            ТОП-3 этологии НГУ
+            <span class="title--smaller">в клинической практике*</span>
+          </h2>
+
+          <div class="ethology-list">
+            <div class="ethology-list__row ethology-list__row--highlight">
+              <div class="ethology-item">
+                <div class="ethology-item__inner">
+                  <span class="ethology-item__number">01</span>
+                  <div class="ethology-item__arrow">
+                    <span class="ethology-item__text">Уреоплазмоз</span>
+                    <svg class="ethology-item__tail" width="98" height="143" viewBox="0 0 98 143" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.390137L61.4756 71.5L4.00493e-05 142.61H6.58827H29.9361H36.5244L98 71.5L36.5243 0.390137H29.9361H6.58823H0Z" fill="url(#paint0_linear)" />
+                      <path d="M28 72L0 44V100L28 72Z" fill="url(#paint1_linear)" />
+                      <defs>
+                        <linearGradient id="paint0_linear" x1="49" y1="0.390137" x2="49" y2="142.61" gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#8C2C3A" />
+                          <stop offset="1" stop-color="#CC374C" />
+                        </linearGradient>
+                        <linearGradient id="paint1_linear" x1="14" y1="44" x2="14" y2="100" gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#8C2C3A" />
+                          <stop offset="1" stop-color="#CC374C" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ethology-list__row ethology-list__row--even">
+              <div class="ethology-item ethology-item--reverse">
+                <div class="ethology-item__inner">
+                  <span class="ethology-item__number">02</span>
+                  <div class="ethology-item__arrow">
+                    <span class="ethology-item__text">Хламидиоз</span>
+                    <svg class="ethology-item__tail" width="98" height="143" viewBox="0 0 98 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M61.4756 71.1099L0 0H29.9361L91.4117 71.1099L29.9361 142.22H4.00581e-05L61.4756 71.1099Z" fill="#39434D"/>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M68.0639 71.1099L6.58823 0H36.5243L98 71.1099L36.5244 142.22H6.58827L68.0639 71.1099Z" fill="#39434D"/>
+                      <path d="M28 71.6099L0 43.6099V99.6099L28 71.6099Z" fill="#39434D"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ethology-list__row">
+              <div class="ethology-item">
+                <div class="ethology-item__inner">
+                  <span class="ethology-item__number">03</span>
+                  <div class="ethology-item__arrow">
+                    <span class="ethology-item__text">Микоплазмоз</span>
+                    <svg class="ethology-item__tail" width="98" height="143" viewBox="0 0 98 143" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M61.4756 71.1099L0 0H29.9361L91.4117 71.1099L29.9361 142.22H4.00581e-05L61.4756 71.1099Z" fill="#39434D"/>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M68.0639 71.1099L6.58823 0H36.5243L98 71.1099L36.5244 142.22H6.58827L68.0639 71.1099Z" fill="#39434D"/>
+                      <path d="M28 71.6099L0 43.6099V99.6099L28 71.6099Z" fill="#39434D"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ethology-details">
+            <p class="ethology-details__text">
+              <span class="ethology-details__top">
+                <span class="ethology-details__top-value">78%</span>
+                <span class="ethology-details__top-arc"></span>
+              </span>
+              <span class="ethology-details__text-smaller">пациентам с НГУ потребовалось</span>
+              <span class="ethology-details__text-bigger">
+                коррекция
+                <br>
+                антибиотикотерапии
+                <sup><a href="" class="link-underline">*</a></sup>
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="drugs">
+        <div class="container">
+          <p class="drugs__heading">
+            Нередко выбор антибиотика
+            <br>
+            при лечении ИППП
+            <br>
+            <b>
+              настоящий вызов для
+              <br>
+              специалиста
+            </b>
+          </p>
+
+          <div class="drugs-list">
+            <div class="drugs-item">
+              <div class="drugs-item__top">
+                <span class="drugs-item__top-text">80%</span>
+              </div>
+              <span class="drugs-item__text">
+                резистентность отдельных возбудителей ИППП к целым классам антибиотиков
+                <sup><a href="" class="link-underline">1</a></sup>
+              </span>
+              <br>
+              <a href="" class="drugs-item__more link-underline highlight">Узнать подробнее</a>
+            </div>
+            <div class="drugs-item">
+              <span class="drugs-item__text">
+                Изменение стратегии антибиотикотерапиии ИППП возврат к “старым” антибиотикам
+                <sup><a href="" class="link-underline">2</a></sup>
+              </span>
+            </div>
+            <div class="drugs-item">
+              <span class="drugs-item__text">
+                Тетрациклины - препараты первой линии в терапии НГУ
+                <sup><a href="" class="link-underline">3</a></sup>
+                <sup><a href="" class="link-underline">5</a></sup>
+              </span>
+            </div>
+            <div class="drugs-item drugs-item--highlight">
+              <span class="drugs-item__text">
+                <b>Минолексин</b> - тетрациклин второго поколения с доказанной высокой эффективностью
+                <sup><a href="" class="link-underline">6</a></sup>
+              </span>
+            </div>
+          </div>
+
+          <ul class="drugs-features">
+            <li class="drugs-features__item">
+              <span class="drugs-features__icon">
+                <svg width="95" height="97" viewBox="0 0 95 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="45.1011" cy="53.3502" r="12.65" fill="white"/>
+                  <circle cx="74.2511" cy="30.7999" r="8.89998" fill="white" stroke="white" stroke-width="2"/>
+                  <circle cx="10.4511" cy="44.0001" r="8.89998" fill="white" stroke="white" stroke-width="2"/>
+                  <circle cx="28.6011" cy="85.2502" r="10.55" fill="white" stroke="white" stroke-width="2"/>
+                  <circle cx="84.151" cy="83.6002" r="8.89998" fill="white" stroke="white" stroke-width="2"/>
+                  <circle cx="33.0011" cy="12.65" r="11.65" fill="white" stroke="white" stroke-width="2"/>
+                  <line x1="42.4875" y1="43.1675" x2="36.9875" y2="23.3676" stroke="white" stroke-width="2"/>
+                  <line x1="33.7706" y1="77.626" x2="41.4706" y2="63.326" stroke="white" stroke-width="2"/>
+                  <line x1="54.9051" y1="48.7366" x2="69.2051" y2="36.6366" stroke="white" stroke-width="2"/>
+                  <line x1="18.4088" y1="47.4337" x2="34.9088" y2="51.8337" stroke="white" stroke-width="2"/>
+                  <line x1="53.9803" y1="60.8229" x2="77.0802" y2="79.5228" stroke="white" stroke-width="2"/>
+                </svg>
+              </span>
+              <p class="drugs-features__text">
+                <span class="drugs-features__text--accent">
+                  Создаёт высокие концентрации
+                </span>
+                действующего вещества
+                <br>
+                в органах
+                <br>
+                и тканях
+                <sup><a href="" class="link-underline">6</a></sup>
+              </p>
+            </li>
+
+            <li class="drugs-features__item">
+              <span class="drugs-features__icon">
+                <svg width="103" height="96" viewBox="0 0 103 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M41.5412 30.7627H23.3247L12.299 46.1029L21.4072 64.2689L41.5412 65.2782L50.6495 47.1121L41.5412 30.7627Z" fill="white"/>
+                  <path d="M76.8295 12.9995H57.8551L49 29.2193L57.8551 44.9995H76.8296L86 29.2193L76.8295 12.9995Z" fill="white"/>
+                  <path d="M77.4949 51.8555H57.3608L49.6907 68.1544L58.799 82.5359H78.933L87.0825 66.2369L77.4949 51.8555Z" fill="white"/>
+                  <path d="M21.9639 62.6647L13.6829 72.7859M23.8041 31.3809L15.5231 19.4194M13.4356 46.0038H0M76.6929 14.1534L84.8992 1.40723M85.1649 28.7301L100.273 27.4893M87.0824 66.0807L102.191 64.8398M77.4949 82.5356L86.1237 94.9995M41.5412 30.7627H23.3247L12.299 46.1029L21.4072 64.2689L41.5412 65.2782L50.6495 47.1121L41.5412 30.7627ZM76.8295 12.9995H57.8551L49 29.2193L57.8551 44.9995H76.8296L86 29.2193L76.8295 12.9995ZM77.4949 51.8555H57.3608L49.6907 68.1544L58.799 82.5359H78.933L87.0825 66.2369L77.4949 51.8555Z" stroke="white" stroke-width="2"/>
+                </svg>
+              </span>
+              <p class="drugs-features__text">
+                <span class="drugs-features__text--accent">
+                  Превосходит другие тетрациклины
+                </span>
+                по степени
+                <br>
+                антимикробного
+                <br>
+                эффекта
+                <sup><a href="" class="link-underline">6</a></sup>
+              </p>
+            </li>
+
+            <li class="drugs-features__item">
+              <span class="drugs-features__icon">
+                <svg width="81" height="92" viewBox="0 0 81 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 17.037C0 71.5556 28 89.7284 42 92V0C26 0 14 11.358 10 17.037H0Z" fill="white"/>
+                  <path d="M42 91C54.6667 88.7778 80 71 80 17.6667H70.9524C67.3333 12.1111 56.4762 1 42 1" stroke="white" stroke-width="2"/>
+                </svg>
+              </span>
+              <p class="drugs-features__text">
+                <span class="drugs-features__text--accent">
+                  Имеет низкую частоту
+                </span>
+                развития
+                <br>
+                резистентности
+                <sup><a href="" class="link-underline">6</a></sup>
+              </p>
+            </li>
+
+            <li class="drugs-features__item">
+              <span class="drugs-features__icon">
+                <svg width="97" height="97" viewBox="0 0 97 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="48.5" cy="48.5" r="48.5" fill="white"/>
+                  <path d="M51.53 29.5V68H47.57V33.02H38.495V29.5H51.53Z" fill="#39434D"/>
+                </svg>
+              </span>
+              <p class="drugs-features__text">
+                <span class="drugs-features__text--accent">
+                  Единственный
+                  зарегистрированный в РФ
+                </span>
+                препарат
+                <br>
+                Миноциклина
+                <sup><a href="" class="link-underline">7</a></sup>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <section class="research">
+        <div class="container">
+          <h2 class="research__title title">
+            Исследование
+            <span class="title--smaller">
+              по изучению антихламидийного эффекта Минолексина
+              <sup><a href="" class="link-underline">6</a></sup>
+            </span>
+          </h2>
+
+          <div class="research-row">
+            <div class="research-col research-col--left"></div>
+
+            <div class="research-col research-col--right">
+              <ul class="research-list bullet-list">
+                <li class="research-list__item">
+                  100% эрадикация
+                  возбудителя на 7 день
+                  терапиии;
+                </li>
+                <li class="research-list__item">
+                  Уменьшение чувства дискомфорта
+                  <br>
+                  у пациентов быстрее,
+                  <br>
+                  по сравнению с группой контроля;
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="links">
+        <div class="container">
+          <h2 class="sr-only">Ссылки</h2>
+  
+          <ul class="links__list js-accordion">
+            <li class="links-item">
+              <h3 class="links-item__title">
+                <button class="links-item__toggler" aria-controls="links-item-1" aria-expanded="false">
+                  Ссылка 1
+                  <svg class="links-item__icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="links-item__icon-bar" fill-rule="evenodd" clip-rule="evenodd" d="M10.6667 24V0H13.3334V24H10.6667Z" fill="#39434D"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 10.6665L24 10.6665L24 13.3332L-1.16564e-07 13.3332L0 10.6665Z" fill="#39434D"/>
+                  </svg>
+                </button>
+              </h3>
+              <div class="links-item__content" id="links-item-1">
+                <h4 class="links-item__heading title">
+                  Уровень антибиотикорезистентности Mycoplasma hominis 
+                  и Ureaplasma spp
+                  <sup><a href="" class="link-underline">1</a></sup>
+                  <span class="title--smaller">при урогенитальных инфекциях по данным исследования Foshci и соавт.</span>
+                </h4>
+  
+                <ul class="chart-names">
+                  <li class="chart-name"><span class="highlight">01.</span> Азитромицин</li>
+                  <li class="chart-name"><span class="highlight">02.</span> Рокситромицин</li>
+                  <li class="chart-name"><span class="highlight">03.</span> Джозамицин</li>
+                  <li class="chart-name"><span class="highlight">04.</span> Миноциклин</li>
+                  <li class="chart-name"><span class="highlight">05.</span> Доксициклин</li>
+                  <li class="chart-name"><span class="highlight">06.</span> Офлоксацин</li>
+                  <li class="chart-name"><span class="highlight">07.</span> Ципрофлоксацин</li>
+                </ul>
+  
+                <ul class="chart-colors chart-colors--inline">
+                  <li class="chart-color">Ureaplasma spp.</li>
+                  <li class="chart-color">M. hominis</li>
+                  <li class="chart-color">Ureaplasma spp. + M. hominis</li>
+                </ul>
+  
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Название</th>
+                        <th scope="col">Ureaplasma spp. % резистентных штаммов</th>
+                        <th scope="col">M. hominis % резистентных штаммов</th>
+                        <th scope="col">
+                          Ureaplasma spp.
+                          <br> 
+                          + M. hominis
+                          <br>
+                          % резистентных штаммов
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Азитромицин</th>
+                        <td>3,2%</td>
+                        <td>87,7%</td>
+                        <td>75,5%</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Рокситромицин</th>
+                        <td>4,6%</td>
+                        <td>93%</td>
+                        <td>93,6%</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Джозамицин</th>
+                        <td>0,3%</td>
+                        <td>12,3%</td>
+                        <td>33%</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Миноциклин</th>
+                        <td>0,9%</td>
+                        <td>7%</td>
+                        <td>22,3%</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Доксициклин</th>
+                        <td>0,9%</td>
+                        <td>5,3%</td>
+                        <td>23,4%</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Офлоксацин</th>
+                        <td>26,3%</td>
+                        <td>17,5%</td>
+                        <td>59,6%</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Ципрофлоксацин</th>
+                        <td>77,1%</td>
+                        <td>26,3%</td>
+                        <td>86,1%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="links-item__notes">
+                  1. Адаптировано из: Foschi C, Salvo M, Galli S, Moroni A, Cevenini R, Marangoni A. Prevalence and antimicrobial resistance of genital Mollicutes in Italy over a two-year period. New Microbiologica. 2018; 41(2): 153-158.
+                </p>
+              </div>
+            </li>
+  
+            <li class="links-item">
+              <h3 class="links-item__title">
+                <button class="links-item__toggler" aria-controls="links-item-2" aria-expanded="false">
+                  Ссылка 2
+                  <svg class="links-item__icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="links-item__icon-bar" fill-rule="evenodd" clip-rule="evenodd" d="M10.6667 24V0H13.3334V24H10.6667Z" fill="#39434D"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 10.6665L24 10.6665L24 13.3332L-1.16564e-07 13.3332L0 10.6665Z" fill="#39434D"/>
+                  </svg>
+                </button>
+              </h3>
+              <div class="links-item__content" id="links-item-2" hidden></div>
+            </li>
+  
+            <li class="links-item">
+              <h3 class="links-item__title">
+                <button class="links-item__toggler" aria-controls="links-item-3" aria-expanded="false">
+                  Ссылка 3
+                  <svg class="links-item__icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="links-item__icon-bar" fill-rule="evenodd" clip-rule="evenodd" d="M10.6667 24V0H13.3334V24H10.6667Z" fill="#39434D"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 10.6665L24 10.6665L24 13.3332L-1.16564e-07 13.3332L0 10.6665Z" fill="#39434D"/>
+                  </svg>
+                </button>
+              </h3>
+              <div class="links-item__content" id="links-item-3" hidden></div>
+            </li>
+  
+            <li class="links-item">
+              <h3 class="links-item__title">
+                <button class="links-item__toggler" aria-controls="links-item-4" aria-expanded="false">
+                  Ссылка 4
+                  <svg class="links-item__icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="links-item__icon-bar" fill-rule="evenodd" clip-rule="evenodd" d="M10.6667 24V0H13.3334V24H10.6667Z" fill="#39434D"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 10.6665L24 10.6665L24 13.3332L-1.16564e-07 13.3332L0 10.6665Z" fill="#39434D"/>
+                  </svg>
+                </button>
+              </h3>
+              <div class="links-item__content" id="links-item-4" hidden></div>
+            </li>
+  
+            <li class="links-item">
+              <h3 class="links-item__title">
+                <button class="links-item__toggler" aria-controls="links-item-5" aria-expanded="false">
+                  Ссылка 5
+                  <svg class="links-item__icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="links-item__icon-bar" fill-rule="evenodd" clip-rule="evenodd" d="M10.6667 24V0H13.3334V24H10.6667Z" fill="#39434D"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 10.6665L24 10.6665L24 13.3332L-1.16564e-07 13.3332L0 10.6665Z" fill="#39434D"/>
+                  </svg>
+                </button>
+              </h3>
+              <div class="links-item__content" id="links-item-5" hidden></div>
+            </li>
+  
+            <li class="links-item">
+              <h3 class="links-item__title">
+                <button class="links-item__toggler" aria-controls="links-item-6" aria-expanded="false">
+                  Ссылка 6
+                  <svg class="links-item__icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="links-item__icon-bar" fill-rule="evenodd" clip-rule="evenodd" d="M10.6667 24V0H13.3334V24H10.6667Z" fill="#39434D"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 10.6665L24 10.6665L24 13.3332L-1.16564e-07 13.3332L0 10.6665Z" fill="#39434D"/>
+                  </svg>
+                </button>
+              </h3>
+              <div class="links-item__content" id="links-item-6" hidden></div>
+            </li>
+  
+            <li class="links-item">
+              <h3 class="links-item__title">
+                <button class="links-item__toggler" aria-controls="links-item-7" aria-expanded="false">
+                  Ссылка 7
+                  <svg class="links-item__icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="links-item__icon-bar" fill-rule="evenodd" clip-rule="evenodd" d="M10.6667 24V0H13.3334V24H10.6667Z" fill="#39434D"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 10.6665L24 10.6665L24 13.3332L-1.16564e-07 13.3332L0 10.6665Z" fill="#39434D"/>
+                  </svg>
+                </button>
+              </h3>
+              <div class="links-item__content" id="links-item-7" hidden></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-top__row">
+            <div class="logo logo--footer">
+              <svg class="logo-icon" viewBox="0 0 165 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 18.8088L18.1184 3.35441C23.2641 -1.03483 30.759 -1.06179 35.9131 2.95191C31.2288 1.13463 25.6992 1.88011 21.6351 5.34667L3.51672 20.801L0 18.8088Z" fill="#EF7C00"/>
+                <path d="M6.66864 22.5866L24.7869 7.13236C29.9326 2.74304 37.4275 2.71617 42.5816 6.72987C37.8972 4.91259 32.3678 5.65806 28.3035 9.12462L10.1853 24.579L6.66864 22.5866Z" fill="#EF7C00"/>
+                <path d="M13.3363 26.3649L31.4546 10.9102C36.6002 6.5211 44.0952 6.49415 49.2493 10.5077C44.5651 8.69056 39.0355 9.43594 34.9713 12.9026L16.853 28.3571L13.3363 26.3649Z" fill="#EF7C00"/>
+                <path d="M57.7423 27.1907L39.6235 42.6457C34.4777 47.0348 26.9829 47.0618 21.8287 43.0483C26.513 44.8653 32.0425 44.1201 36.1068 40.6534L54.2259 25.1984L57.7423 27.1907Z" fill="#C70B6F"/>
+                <path d="M51.0749 23.413L32.9561 38.8679C27.8103 43.2571 20.3152 43.2842 15.1613 39.2703C19.8454 41.0877 25.375 40.3421 29.4391 36.8757L47.5582 21.4205L51.0749 23.413Z" fill="#C70B6F"/>
+                <path d="M44.4061 19.6348L26.2871 35.0899C21.1413 39.4793 13.6464 39.5061 8.49249 35.4925C13.1767 37.3099 18.7063 36.5643 22.7704 33.0976L40.8894 17.6425L44.4061 19.6348Z" fill="#C70B6F"/>
+                <path d="M85.0288 19.3199C85.0288 14.7606 82.9786 11.9599 76.0939 11.9599C73.3404 11.9599 70.4901 12.6033 68.3393 13.3628L68.812 17.881C70.6196 16.8675 73.2011 16.2343 75.1374 16.2343C78.2356 16.2343 79.311 17.374 79.311 19.5695V20.7098C72.0397 20.7098 66.9618 23.3692 66.9618 28.3937C66.9618 31.7717 69.1849 34.04 73.0572 34.04C76.2415 34.04 78.9739 32.0916 80.0066 29.7274L79.9565 29.9561C79.7844 31.054 79.4225 32.8152 79.4225 34.04H85.0288V19.3199ZM79.311 24.721C79.311 27.254 77.4609 29.7872 74.75 29.7872C73.1586 29.7872 72.2117 28.9009 72.2117 27.5493C72.2117 25.8608 73.5024 24.214 79.311 24.214V24.721Z" fill="#39434D"/>
+                <path d="M104.65 33.0535L104.209 28.3804C103.017 28.9811 101.385 29.2806 99.8846 29.2806C96.1346 29.2806 94.6783 26.794 94.6783 23.1501C94.6783 19.1195 96.4873 16.5473 100.061 16.5473C101.474 16.5473 102.841 16.8901 104.033 17.3191L104.606 12.5599C103.194 12.1738 101.606 11.9599 100.106 11.9599C92.3401 11.9599 88.7658 17.062 88.7658 23.7075C88.7658 30.9529 92.5604 34.04 98.6495 34.04C100.988 34.04 103.15 33.6108 104.65 33.0535Z" fill="#39434D"/>
+                <path d="M139.223 18.5149C139.223 14.8908 137.665 11.9599 132.82 11.9599C129.316 11.9599 126.807 13.6677 125.509 16.125L125.465 16.0836C125.683 15.0006 126.142 12.9179 126.142 11.9599H120.534V34.04H126.142V23.1149C126.142 19.4915 128.278 16.4166 131.09 16.4166C133.123 16.4166 133.617 17.6139 133.617 19.7799V34.04H139.223V18.5149Z" fill="#39434D"/>
+                <path d="M164.45 22.5944C164.45 15.2911 160.601 11.9599 154.637 11.9599C148.25 11.9599 143.894 16.7431 143.894 23.3628C143.894 30.9223 147.742 34.04 153.707 34.04C160.009 34.04 164.45 29.2565 164.45 22.5944ZM158.867 22.893C158.867 27.2071 156.837 29.385 154.172 29.385C151.042 29.385 149.476 27.1641 149.476 22.8075C149.476 18.4518 151.845 16.5723 154.257 16.5723C157.428 16.5723 158.867 18.7932 158.867 22.893Z" fill="#39434D"/>
+                <path d="M114.928 34.04V11.9599H109.322V34.04H114.928Z" fill="#39434D"/>
+                <path d="M114.928 6.42227C114.928 4.89093 113.659 3.68021 112.108 3.68021C110.556 3.68021 109.322 4.92681 109.322 6.42227C109.322 7.95417 110.556 9.20021 112.108 9.20021C113.659 9.20021 114.928 7.95417 114.928 6.42227Z" fill="#39434D"/>
+              </svg>
+            </div>
+
+            <p class="footer-top__info">№ ЛП-001666, 2012-04-20</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-mid">
+        <div class="container">
+          <p class="footer-mid__info">Имеются противопоказания. Ознакомьтесь с инструкцией</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p class="footer-bottom__info">
+            Производитель/организация, принимающая претензии:
+            ОАО «АВВА РУС», Россия, 610044, Кировская обл., г. Киров, ул. Луганская,
+            д. 53а, тел.: (8332) 25-12-29, (495) 956-75-54, avva.com.ru
+            ecoantibiotic.ru
+            Организация, уполномоченная принимать претензии от потребителей на территории РФ: ООО «Ацино Рус», 127055, г. Москва, ул. Палиха, д. 10, стр. 3, оф. 2.1, тел. + 7 (495) 502-92-47,
+            e-mail: info_rus@acino.swiss, safety_rus@acino.swiss
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <!-- Scripts -->
+  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="js/vendor/jquery-3.3.1.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

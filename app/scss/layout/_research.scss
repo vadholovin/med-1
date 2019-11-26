@@ -1,0 +1,44 @@
+/* ==========================================================================
+   #RESEARCH
+   ========================================================================== */
+
+.research {
+  padding-top: rem(50px);
+  padding-top: rem(100px);
+}
+
+.research__title {
+  margin-bottom: rem(64px);
+}
+
+.research-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.research-col {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.research-col--left {
+  width: 100%;
+  width: 60%;
+}
+
+.research-col--right {
+  width: 100%;
+  width: 40%;
+}
+
+.research-list {
+  font-size: rem(32px);
+  text-transform: none;
+  line-height: 1.5;
+
+  > * + * {
+    margin-top: 87px;
+  }
+}

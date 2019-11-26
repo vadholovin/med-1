@@ -1,0 +1,92 @@
+/* ==========================================================================
+   #LINKS
+   ========================================================================== */
+
+.links {
+  padding-bottom: rem(10px);
+  
+  @include for-size(lg-up) {
+    padding-bottom: rem(54px);
+  }
+}
+
+.links__list {
+  width: 100%;
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.links-item {
+  border-bottom: 1px solid rgba(#000, 0.1);
+}
+
+.links-item__toggler {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: rem(20px 0);
+  border: none;
+  font-size: 1rem;
+  text-align: left;
+  text-transform: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $highlight;
+  }
+
+  @include for-size(sm-up) {
+    font-size: calc(1rem + 0.833vw);
+  }
+
+  @include for-size(md-up) {
+    padding: rem(30px 20px);
+  }
+
+  @include for-size(xl-up) {
+    padding: rem(40px 20px);
+    font-size: rem(28px);
+  }
+}
+
+.links-item__toggler.is-active {
+
+  .links-item__icon-bar {
+    opacity: 0;
+    transition: opacity $ease-main;
+  }
+}
+
+.links-item__icon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translate(0, -50%);
+  pointer-events: none;
+  
+  path {
+    fill: currentColor;
+  }
+}
+
+.links-item__content {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(#000, 0.1);
+  transition:
+    visibility $ease-main,
+    opacity $ease-main,
+    height $ease-main;
+}
+
+.links-item__content.is-open {
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+}

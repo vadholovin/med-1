@@ -1,0 +1,247 @@
+/* ==========================================================================
+   #DRUGS
+   ========================================================================== */
+
+.drugs {
+  padding-top: rem(50px);
+  padding-bottom: rem(50px);
+  box-shadow: 0 0 30px rgba(#000, 0.1);
+
+  @include for-size(xl-up) {
+    padding-top: rem(100px);
+    padding-bottom: rem(100px);
+  }
+}
+
+.drugs__heading {
+  margin-bottom: rem(145px);
+  font-size: calc(1rem + 5.3125vw);
+  text-align: center;
+  
+  @include for-size(sm-up) {
+    font-size: calc(1rem + 3.194vw);
+  }
+
+  @include for-size(xl-up) {
+    margin-bottom: rem(220px);
+    font-size: rem(62px);
+  }
+}
+
+.drugs-list {
+  margin-top: rem(-38px);
+  margin-bottom: 18px;
+
+  @include for-size(xl-up) {
+    margin-top: rem(-48px);
+    margin-bottom: 28px;
+  }
+}
+
+.drugs-item {
+  position: relative;
+  width: 100%;
+  max-width: 1204px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 210px;
+  margin-top: rem(38px);
+  padding: rem(30px 24px 24px 24px);
+  border-bottom: 12px solid $grey-border;
+  font-weight: 600;
+  font-size: rem(18px);
+  font-size: rem(36px);
+  text-align: center;
+  background-color: #fff;
+  box-shadow: $shadow;
+  z-index: 1;
+
+  @include for-size(xl-up) {
+    margin-top: rem(48px);
+    padding: rem(56px 52px 52px 52px);
+    border-bottom: 15px solid $grey-border;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 0;
+    height: 0;
+    border-top: 28px solid $grey-border;
+    border-left: 28px solid transparent;
+    border-right: 28px solid transparent;
+  }
+}
+
+.drugs-item:first-of-type {
+  padding-bottom: rem(15px);
+  padding-bottom: rem(30px);
+  border-top: 15px solid $grey-border;
+
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  //   width: 250px;
+  //   height: 250px;
+  //   border-radius: 50%;
+  //   background-color: $bg-grey;
+  //   z-index: -1;
+  // }
+}
+
+.drugs-item__more {
+  display: inline-block;
+  margin-top: rem(32px);
+}
+
+.drugs-item__top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  width: 250px;
+  height: 125px;
+  overflow: hidden;
+}
+
+.drugs-item__top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  background-color: $bg-grey;
+  z-index: -1;
+}
+
+.drugs-item__top::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: calc(100% - 30px);
+  padding-top: calc(100% - 30px);
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.drugs-item__top-text {
+  @include centered;
+  font-weight: bold;
+  font-size: rem(55px);
+  line-height: 1.15;
+  letter-spacing: -0.075em;
+  font-size: rem(72px);
+  z-index: 2;
+
+  transform: translate(-50%, -25%);
+}
+
+.drugs-item--highlight {
+  background-color: $bg-red;
+  border-bottom-color: #c3283f;
+  color: #fff;
+
+  &::after {
+    border-top-color: #c3283f;
+  }
+}
+
+
+.drugs-features {
+  position: relative;
+  top: -0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -8px;
+  margin-right: -8px;
+  margin-bottom: rem(-20px);
+  padding-top: 85px;
+}
+
+.drugs-features::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 0;
+  height: 85px;
+  border-left: 10px solid #eee;
+}
+
+.drugs-features::after {
+  content: '';
+  position: absolute;
+  top: 85px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 75%;
+  height: 0;
+  border-top: 10px solid #eee;
+}
+
+.drugs-features__item {
+  position: relative;
+  width: 100%;
+  width: 25%;
+  margin-bottom: rem(20px);
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 65px;
+  text-align: center;
+}
+
+.drugs-features__item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 0;
+  height: 75px;
+  border-left: 10px solid #eee;
+  z-index: -1;
+}
+
+.drugs-features__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 160px;
+  margin-bottom: rem(40px);
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $bg-red;
+}
+
+.drugs-features__item:nth-child(2n) .drugs-features__icon {
+  background-color: $bg-grey;
+}
+
+.drugs-features__text {
+  text-transform: none;
+  font-size: rem(28px);
+  overflow-wrap: break-word;
+}
+
+.drugs-features__text--accent {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: rem(10px);
+  text-transform: uppercase;
+  font-weight: bold;
+}
