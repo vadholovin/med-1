@@ -33,6 +33,47 @@
   width: 40%;
 }
 
+.research-chart__wrapper {
+  text-transform: none;
+  font-weight: 600;
+  
+  @include for-size(xl) {
+    font-size: rem(26px);
+  }
+}
+
+.research-chart {
+  width: 690px;
+  height: 530px;
+}
+
+.research-chart__labels {
+  display: flex;
+
+  > * {
+    flex-grow: 1;
+    text-align: center;
+
+    &::before {
+      content: none;
+      margin-right: 20px;
+    }
+
+    &:first-child::before {
+      background-color: $bg-red-light;
+    }
+    &:last-child::before {
+      background-color: $bg-grey;
+    }
+
+    
+  }
+}
+
+.research-chart__desc {
+  text-align: center;
+}
+
 .research-list {
   font-size: rem(32px);
   text-transform: none;

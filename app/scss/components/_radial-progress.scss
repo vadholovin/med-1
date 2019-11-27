@@ -1,0 +1,90 @@
+.radial-progress {
+  position: relative;
+  $circle-size: 272px;
+  $circle-background: rgba(#8c2c3a, 0.2);
+  $circle-color: #8c2c3a;
+  $inset-size: 196px;
+  $inset-color: #fff;
+  $transition-length: 1s;
+  $percentage-color: inherit;
+  $percentage-font-size: 58px;
+  $percentage-text-width: 140px;
+
+
+	width: $circle-size;
+	height: $circle-size;
+
+	background-color: $circle-background;
+  border-radius: 50%;
+
+  &__mask,
+  &__fill,
+  &__shadow {
+    width: $circle-size;
+    height: $circle-size;
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  &__shadow {
+    box-shadow: $shadow inset;
+  }
+  
+  &__mask,
+  &__fill {
+    backface-visibility: hidden;
+    transition: transform $transition-length;
+    border-radius: 50%;
+  }
+  
+  &__mask {
+    clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+    .radial-progress__fill {
+      clip: rect(0px, $circle-size/2, $circle-size, 0px);
+      background-color: $circle-color;
+    }
+  }
+  
+  &__inset {
+    @include centered;
+    width: $inset-size;
+    height: $inset-size;
+    background-color: $inset-color;
+    border-radius: 50%;
+    box-shadow: $shadow;
+  }
+  
+  &__percentage {
+    @include centered;
+    line-height: 1;
+  }
+  
+  &__numbers {
+        
+    span {
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+      font-weight: bold;
+      font-size: $percentage-font-size;
+    }
+  }
+  
+  $increment: 180deg / 100;
+  @for $i from 0 through 100 {
+    &[data-progress="#{$i}"] {
+      .radial-progress__circle {
+        .radial-progress__mask.radial-progress__mask--full, .radial-progress__fill {
+          transform: rotate($increment * $i);
+        }
+        .radial-progress__fill.radial-progress__fill--fix {
+          transform: rotate($increment * $i * 2);
+        }
+      }
+    }
+  }
+}
+
+
+
+

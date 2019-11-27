@@ -23,6 +23,7 @@
     "@fancyapps/fancybox": "^3.5.7",
     "animate.css": "^3.7.0",
     "bootstrap": "^4.3.1",
+    "chart.js": "^2.9.3",
     "destyle.css": "^1.0.5",
     "fg-loadcss": "^2.1.0",
     "flickity": "^2.2.0",

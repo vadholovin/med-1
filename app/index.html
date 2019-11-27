@@ -87,33 +87,90 @@
           <div class="causes-charts">
 
             <div class="causes-charts__item">
-              <div class="causes-charts__graph arc-graph progress-26">
-                <span class="arc-graph__value">26%</span>
-                <div class="pie">
-                  <div class="left-side half-circle"></div>
-                  <div class="right-side half-circle"></div>
+              <div class="causes-charts__graph radial-progress" data-progress="25">
+                <div class="radial-progress__circle">
+                  <div class="radial-progress__mask radial-progress__mask--full">
+                    <div class="radial-progress__fill"></div>
+                  </div>
+                  <div class="radial-progress__mask radial-progress__mask--half">
+                    <div class="radial-progress__fill"></div>
+                    <div class="radial-progress__fill radial-progress__fill--fix"></div>
+                  </div>
+                </div>
+                <div class="radial-progress__inset">
+                  <div class="radial-progress__percentage">
+                    <div class="radial-progress__numbers">
+                      <span>25%</span>
+                    </div>
+                  </div>
                 </div>
               </div>
+              
               <p class="causes-charts__name">Chlamydia Trachomatis</p>
             </div>
 
             <div class="causes-charts__item">
-              <div class="causes-charts__graph">
-                <span class="causes-charts__value">16%</span>
+              <div class="causes-charts__graph radial-progress" data-progress="16">
+                <div class="radial-progress__circle">
+                  <div class="radial-progress__mask radial-progress__mask--full">
+                    <div class="radial-progress__fill"></div>
+                  </div>
+                  <div class="radial-progress__mask radial-progress__mask--half">
+                    <div class="radial-progress__fill"></div>
+                    <div class="radial-progress__fill radial-progress__fill--fix"></div>
+                  </div>
+                </div>
+                <div class="radial-progress__inset">
+                  <div class="radial-progress__percentage">
+                    <div class="radial-progress__numbers">
+                      <span>16%</span>
+                    </div>
+                  </div>
+                </div>
               </div>
               <p class="causes-charts__name">Mycoplasma, Sp</p>
             </div>
 
             <div class="causes-charts__item">
-              <div class="causes-charts__graph">
-                <span class="causes-charts__value">47%</span>
+              <div class="causes-charts__graph radial-progress" data-progress="47">
+                <div class="radial-progress__circle">
+                  <div class="radial-progress__mask radial-progress__mask--full">
+                    <div class="radial-progress__fill"></div>
+                  </div>
+                  <div class="radial-progress__mask radial-progress__mask--half">
+                    <div class="radial-progress__fill"></div>
+                    <div class="radial-progress__fill radial-progress__fill--fix"></div>
+                  </div>
+                </div>
+                <div class="radial-progress__inset">
+                  <div class="radial-progress__percentage">
+                    <div class="radial-progress__numbers">
+                      <span>47%</span>
+                    </div>
+                  </div>
+                </div>
               </div>
               <p class="causes-charts__name">Ureoplasma, Sp</p>
             </div>
 
             <div class="causes-charts__item">
-              <div class="causes-charts__graph">
-                <span class="causes-charts__value">4%</span>
+              <div class="causes-charts__graph radial-progress" data-progress="4">
+                <div class="radial-progress__circle">
+                  <div class="radial-progress__mask radial-progress__mask--full">
+                    <div class="radial-progress__fill"></div>
+                  </div>
+                  <div class="radial-progress__mask radial-progress__mask--half">
+                    <div class="radial-progress__fill"></div>
+                    <div class="radial-progress__fill radial-progress__fill--fix"></div>
+                  </div>
+                </div>
+                <div class="radial-progress__inset">
+                  <div class="radial-progress__percentage">
+                    <div class="radial-progress__numbers">
+                      <span>4%</span>
+                    </div>
+                  </div>
+                </div>
               </div>
               <p class="causes-charts__name">Trichomans Vaginalis</p>
             </div>
@@ -133,6 +190,10 @@
           <h2 class="ethology__title title">
             ТОП-3 этологии НГУ
             <span class="title--smaller">в клинической практике*</span>
+
+            <svg class="ethology__title-arrow" width="39" height="46" viewBox="0 0 39 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M39 23L1.69397e-06 45.5167L3.66244e-06 0.483338L39 23Z" fill="#EEEEEE"/>
+            </svg>
           </h2>
 
           <div class="ethology-list">
@@ -365,7 +426,22 @@
           </h2>
 
           <div class="research-row">
-            <div class="research-col research-col--left"></div>
+            <div class="research-col research-col--left">
+              <div class="research-chart__wrapper">
+                <canvas class="research-chart" id="researchChart" width="690" height="530"></canvas>
+                <div class="research-chart__label">Время лечения, ч.</div>
+                <ul class="research-chart__labels bullet-list">
+                  <li>Доксициклин</li>
+                  <li>Минолексин</li>
+                </ul>
+                <p class="research-chart__desc">
+                  Динамика субъективных ощущений
+                  в области половых
+                  органов у мужчин
+                  и женщин на фоне антибиотикотерапии
+                </p>
+              </div>
+            </div>
 
             <div class="research-col research-col--right">
               <ul class="research-list bullet-list">
@@ -629,8 +705,8 @@
 
 
   <!-- Scripts -->
-  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
   <script src="js/vendor/jquery-3.3.1.min.js"></script>
+  <script src="libs/chart/Chart.min.js"></script>
   <script src="js/main.js"></script>
 
 </body>

@@ -12,44 +12,181 @@
 
 .ethology__title {
   position: relative;
-  margin-bottom: rem(92px);
+  margin-bottom: rem(50px);
+  padding-top: 50px;
+
+  @include for-size(md-up) {
+    margin-bottom: 0;
+  }
+}
+
+.ethology__title .title--smaller {
+  margin-top: rem(20px);
+
+  @include for-size(xl-up) {
+    margin-top: rem(32px);
+  }
+}
+
+.ethology__title::before {
+
+  @include for-size(md-up) {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200vw;
+    height: 93%;
+    border-top: 10px solid #eee;
+    border-left: 10px solid #eee;
+    border-top-left-radius: 500px;
+    border-bottom-left-radius: 500px;
+  }
+}
+
+.ethology__title::after {
+
+  @include for-size(md-up) {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18%;
+    height: 93%;
+    border-bottom: 10px solid #eee;
+    border-left: 10px solid #eee;
+    border-top-left-radius: 500px;
+    border-bottom-left-radius: 500px;
+  }
+
+  @include for-size(lg-up) {
+    width: 24%;
+  }
+}
+
+.ethology__title-arrow {
+  display: none;
+
+  @include for-size(md-up) {
+    display: inline-block;
+    position: absolute;
+    top: 90%;
+    left: 17%;
+    transform: translate(0, -50%);
+  }
+
+  @include for-size(lg-up) {
+    left: 23.5%;
+  }
 }
 
 .ethology-list {
-  margin-bottom: 100px;
+  position: relative;
+
+  @include for-size(md-up) {
+    margin-top: -15px;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 98px 46px 112px 46px;
+    border-right: 10px solid #eee;
+    border-bottom: 10px solid #eee;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+}
+
+.ethology-list::before {
+
+  @include for-size(md-up) {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 22%;
+    height: 100px;
+    transform: translate(10px, -10px);
+    border-top: 10px solid #eee;
+    border-right: 10px solid #eee;
+    border-top-right-radius: 50px;
+  }
+
+  @include for-size(lg-up) {
+    width: 26%;
+  }
+}
+
+.ethology-list::after {
+
+  @include for-size(md-up) {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200vw;
+    height: 100px;
+    transform: translate(10px, 10px);
+    border-bottom: 10px solid #eee;
+    border-right: 10px solid #eee;
+    border-bottom-right-radius: 50px;
+  }
 }
 
 .ethology-list__row {
   position: relative;
-  display: flex;
+
+  @include for-size(md-up) {
+    display: flex;
+  }
 }
 
 .ethology-list__row + .ethology-list__row {
-  margin-top: rem(56px);
+  margin-top: rem(33px);
+
+  @include for-size(md-up) {
+    margin-top: rem(56px);
+  }
 }
 
 .ethology-list__row::before {
-  content: '';
-  position: absolute;
-  width: 70%;
-  height: 120px;
-  top: 50%;
-  right: 0;
-  transform: translate(-60px,-50%);
-  background-color: rgba(#000, 0.02);
+
+  @include for-size(md-up) {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 100px;
+    top: 50%;
+    right: 0;
+    transform: translate(-50px,-50%);
+    background-color: rgba(#000, 0.02);
+  }
+
+  @include for-size(xl-up) {
+    height: 120px;
+    transform: translate(-60px,-50%);
+  }
 }
 
 .ethology-list__row::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-left: 60px solid rgba(#000, 0.02);
-  border-top: 60px solid transparent;
-  border-bottom: 60px solid transparent;
+  
+
+  @include for-size(md-up) {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 50px solid rgba(#000, 0.02);
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+  }
+
+  @include for-size(xl-up) {
+    border-left: 60px solid rgba(#000, 0.02);
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+  }
 }
 
 .ethology-list__row--highlight {
@@ -66,25 +203,32 @@
 }
 
 .ethology-list__row--even {
-  justify-content: flex-end;
+  
 
-  &::before {
-    left: 0;
-    right: auto;
-    transform: translate(60px,-50%);
-  }
+  @include for-size(md-up) {
+    justify-content: flex-end;
 
-  &::after {
-    left: 0;
-    right: auto;
-    transform: translateY(-50%) rotate(0.5turn);
+    &::before {
+      left: 0;
+      right: auto;
+      transform: translate(60px,-50%);
+    }
+  
+    &::after {
+      left: 0;
+      right: auto;
+      transform: translateY(-50%) rotate(0.5turn);
+    }
   }
 }
 
 
 .ethology-item__inner {
-  display: flex;
-  align-items: center;
+
+  @include for-size(md-up) {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .ethology-item__number {
@@ -92,6 +236,11 @@
   font-weight: bold;
   font-size: rem(60px);
   letter-spacing: -0.03em;
+  display: none;
+
+  @include for-size(md-up) {
+    display: inline-block;
+  }
 }
 
 .ethology-item__text {
@@ -101,8 +250,37 @@
   width: 100%;
   height: 100%;
   font-family: $font-secondary;
-  font-size: rem(50px);
+  font-size: rem(33px);
   background-color: #fff;
+
+  @media (max-width: 899.98px) {
+    position: relative;
+    padding: rem(15px);
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
+    border-bottom: 10px solid currentColor;
+
+    .ethology-list__row--highlight & {
+      border-bottom-color: $red-border;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, 10px);
+      width: 0;
+      height: 0;
+      border-top: 14px solid currentColor;
+      border-left: 14px solid transparent;
+      border-right: 14px solid transparent;
+      z-index: 1;
+    }
+  }
+
+  @include for-size(xl-up) {
+    font-size: rem(50px);
+  }
 }
 
 .ethology-list__row--highlight .ethology-item__number
@@ -112,44 +290,82 @@
 
 .ethology-item__arrow {
   position: relative;
-  width: 608px;
-  height: 120px;
-  padding-left: 60px;
-  padding-right: 60px;
-  background-color: transparent;
-  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.25));
+  
+
+  @include for-size(md-up) {
+    width: 500px;
+    height: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: transparent;
+    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.25));
+  }
+
+  @include for-size(xl-up) {
+    width: 608px;
+    height: 120px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
 }
 
 .ethology-item__arrow::before,
 .ethology-item__arrow::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translate(0, -50%);
-  width: 0;
-  height: 0;
+  
+
+  @include for-size(md-up) {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 0;
+    height: 0;
+  }
 }
 
 .ethology-item__arrow::before {
-  border-left: 60px solid transparent;
-  border-top: 60px solid #fff;
-  border-bottom: 60px solid #fff;
+  border-left: 50px solid transparent;
+  border-top: 50px solid #fff;
+  border-bottom: 50px solid #fff;
+
+  @include for-size(xl-up) {
+    border-left: 60px solid transparent;
+    border-top: 60px solid #fff;
+    border-bottom: 60px solid #fff;
+  }
 }
 
 .ethology-item__arrow::after {
   left: auto;
   right: 0;
-  border-left: 60px solid #fff;
-  border-top: 60px solid transparent;
-  border-bottom: 60px solid transparent;
+  border-left: 50px solid #fff;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+
+  @include for-size(xl-up) {
+    border-left: 60px solid #fff;
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+  }
 }
 
 .ethology-item__tail {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translate(-8px, -50%);
+  display: none;
+
+  @include for-size(md-up) {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 120px;
+    transform: translate(-16px, -50%);
+  }
+
+  @include for-size(xl-up) {
+    height: auto;
+    transform: translate(-8px, -50%);
+  }
 }
 
 .ethology-item--reverse {
@@ -179,14 +395,22 @@
   .ethology-item__tail {
     right: 0;
     left: auto;
-    transform: translate(8px, -50%) rotate(0.5turn);
+    transform: translate(16px, -50%) rotate(0.5turn);
+
+    @include for-size(xl-up) {
+      transform: translate(8px, -50%) rotate(0.5turn);
+    }
   }
 }
 
 
 .ethology-details {
   position: relative;
-  padding-top: 76px;
+  padding-top: 40px;
+
+  @include for-size(md-up) {
+    padding-top: 76px;
+  }
 
   &:before {
     content: '';
@@ -195,8 +419,13 @@
     left: 50%;
     transform: translate(-50%, 0);
     width: 0;
-    height: 76px;
-    border-left: 10px solid #eee;
+    height: 40px;
+    border-left: 4px solid #eee;
+
+    @include for-size(md-up) {
+      border-left-width: 10px;
+      height: 76px;
+    }
   }
 }
 
@@ -209,9 +438,9 @@
 
 .ethology-details__top {
   position: relative;
-  width: 482px;
+  width: 272px;
   margin-top: -5px;
-  margin-bottom: rem(50px);
+  margin-bottom: rem(30px);
   overflow: hidden;
 
   &::before {
@@ -225,6 +454,11 @@
     display: block;
     clear: both;
   }
+
+  @include for-size(md-up) {
+    width: 482px;
+    margin-bottom: rem(50px);
+  }
 }
 
 .ethology-details__top-value {
@@ -235,9 +469,13 @@
   left: 50%;
   transform: translate(-45%, 15%);
   font-weight: bold;
-  font-size: rem(160px);
+  font-size: rem(80px);
   line-height: 1.15;
   letter-spacing: normal;
+
+  @include for-size(md-up) {
+    font-size: rem(160px);
+  }
 }
 
 .ethology-details__top-arc {
@@ -248,17 +486,26 @@
   width: 98%;
   padding-top: 98%;
   border-radius: 50%;
-  border: 10px solid #eee;
+  border: 4px solid #eee;
   border-bottom-style: dashed;
   border-left-style: dashed;
   transform: translate(-50%, 0) rotate(45deg);
+
+  @include for-size(md-up) {
+    border-width: 10px;
+  }
 }
 
 .ethology-details__text-smaller {
   font-size: calc(1rem + 0.625vw);
+  margin-bottom: rem(30px);
   
   @include for-size(sm-up) {
     font-size: calc(1rem + 0.97vw);
+  }
+
+  @include for-size(md-up) {
+    margin-bottom: 1rem;
   }
 
   @include for-size(xl-up) {
@@ -269,6 +516,7 @@
 
 .ethology-details__text-bigger {
   font-weight: bold;
+  overflow-wrap: break-word;
   font-size: calc(1rem + 5.3125vw);
   
   @include for-size(sm-up) {

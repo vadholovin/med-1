@@ -16,6 +16,7 @@
   max-width: 1120px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: rem(112px);
 }
 
 .causes-charts {
@@ -45,43 +46,62 @@
 }
 
 .causes-charts__graph {
-  width: 187px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: rem(20px);
-  background-color: red;
 
   @include for-size(lg-up) {
     margin-bottom: rem(36px);
   }
-
-  @include for-size(xl-up) {
-    width: 272px;
-  }
 }
 
-.arc-graph {
-  position: relative;
-  border-radius: 50%;
+.causes-charts__graph {
 
-  &::before {
-    content: '';
-    float: left;
-    padding-top: 100%;
+  &.radial-progress,
+  .radial-progress__mask,
+  .radial-progress__fill {
+    width: 187px;
+    height: 187px;
+
+    @include for-size(xl-up) {
+      width: 272px;
+      height: 272px;
+    }
   }
 
-  &::after {
-    content: ' ';
-    display: block;
-    clear: both;
-  }
-}
+  .radial-progress__mask {
+    clip: rect(0px, 187px, 187px, 93.5px);
 
-.arc-graph__value {
-  @include centered;
-  font-weight: bold;
-  font-size: 45px;
-  font-size: 58px;
+    @include for-size(xl-up) {
+      clip: rect(0px, 272px, 272px, 136px);
+    }
+
+    .radial-progress__fill {
+      clip: rect(0px, 93.5px, 187px, 0px);
+
+      @include for-size(xl-up) {
+        clip: rect(0px, 136px, 272px, 0px);
+      }
+    }
+  }
+
+  .radial-progress__inset {
+    width: 135px;
+    height: 135px;
+
+    @include for-size(xl-up) {
+      width: 196px;
+      height: 196px;
+    }
+  }
+
+  .radial-progress__numbers span {
+    font-size: 45px;
+  
+    @include for-size(xl-up) {
+      font-size: 58px;
+    }
+  }
 }
 
 .causes-charts__name {

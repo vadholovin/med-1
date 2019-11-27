@@ -12,6 +12,12 @@
 @import 'base/helpers';
 
 
+@import 'components/menu';
+@import 'components/button';
+@import 'components/bullet-list';
+@import 'components/radial-progress';
+
+
 @import 'layout/header';
 @import 'layout/hero';
 @import 'layout/causes';
@@ -22,7 +28,4 @@
 @import 'layout/footer';
 
 
-@import 'components/menu';
-@import 'components/button';
-@import 'components/bullet-list';
 

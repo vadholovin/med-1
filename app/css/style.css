@@ -62,6 +62,7 @@ html {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+  overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
@@ -390,6 +391,1138 @@ body {
 }
 
 /* ==========================================================================
+   #MENU
+   ========================================================================== */
+.menu {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+
+/*------------------------------------------*/
+/*  BUTTONS
+/*------------------------------------------*/
+.btn {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: top;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: background-color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+/* ==========================================================================
+   #BULLET-LIST
+   ========================================================================== */
+.bullet-list > * {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: baseline;
+          align-items: baseline;
+}
+
+.bullet-list > *::before {
+  content: '';
+  position: relative;
+  top: -0.08em;
+  -webkit-box-flex: 0;
+          flex: none;
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin-right: 30px;
+  background-color: #8c2c3a;
+}
+
+.radial-progress {
+  position: relative;
+  width: 272px;
+  height: 272px;
+  background-color: rgba(140, 44, 58, 0.2);
+  border-radius: 50%;
+}
+
+.radial-progress__mask, .radial-progress__fill, .radial-progress__shadow {
+  width: 272px;
+  height: 272px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.radial-progress__shadow {
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25) inset;
+}
+
+.radial-progress__mask, .radial-progress__fill {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  border-radius: 50%;
+}
+
+.radial-progress__mask {
+  clip: rect(0px, 272px, 272px, 136px);
+}
+
+.radial-progress__mask .radial-progress__fill {
+  clip: rect(0px, 136px, 272px, 0px);
+  background-color: #8c2c3a;
+}
+
+.radial-progress__inset {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 196px;
+  height: 196px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+}
+
+.radial-progress__percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  line-height: 1;
+}
+
+.radial-progress__numbers span {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  font-weight: bold;
+  font-size: 58px;
+}
+
+.radial-progress[data-progress="0"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="0"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.radial-progress[data-progress="0"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.radial-progress[data-progress="1"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="1"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(1.8deg);
+          transform: rotate(1.8deg);
+}
+
+.radial-progress[data-progress="1"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(3.6deg);
+          transform: rotate(3.6deg);
+}
+
+.radial-progress[data-progress="2"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="2"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(3.6deg);
+          transform: rotate(3.6deg);
+}
+
+.radial-progress[data-progress="2"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(7.2deg);
+          transform: rotate(7.2deg);
+}
+
+.radial-progress[data-progress="3"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="3"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(5.4deg);
+          transform: rotate(5.4deg);
+}
+
+.radial-progress[data-progress="3"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(10.8deg);
+          transform: rotate(10.8deg);
+}
+
+.radial-progress[data-progress="4"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="4"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(7.2deg);
+          transform: rotate(7.2deg);
+}
+
+.radial-progress[data-progress="4"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(14.4deg);
+          transform: rotate(14.4deg);
+}
+
+.radial-progress[data-progress="5"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="5"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(9deg);
+          transform: rotate(9deg);
+}
+
+.radial-progress[data-progress="5"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(18deg);
+          transform: rotate(18deg);
+}
+
+.radial-progress[data-progress="6"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="6"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(10.8deg);
+          transform: rotate(10.8deg);
+}
+
+.radial-progress[data-progress="6"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(21.6deg);
+          transform: rotate(21.6deg);
+}
+
+.radial-progress[data-progress="7"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="7"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(12.6deg);
+          transform: rotate(12.6deg);
+}
+
+.radial-progress[data-progress="7"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(25.2deg);
+          transform: rotate(25.2deg);
+}
+
+.radial-progress[data-progress="8"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="8"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(14.4deg);
+          transform: rotate(14.4deg);
+}
+
+.radial-progress[data-progress="8"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(28.8deg);
+          transform: rotate(28.8deg);
+}
+
+.radial-progress[data-progress="9"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="9"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(16.2deg);
+          transform: rotate(16.2deg);
+}
+
+.radial-progress[data-progress="9"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(32.4deg);
+          transform: rotate(32.4deg);
+}
+
+.radial-progress[data-progress="10"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="10"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(18deg);
+          transform: rotate(18deg);
+}
+
+.radial-progress[data-progress="10"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(36deg);
+          transform: rotate(36deg);
+}
+
+.radial-progress[data-progress="11"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="11"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(19.8deg);
+          transform: rotate(19.8deg);
+}
+
+.radial-progress[data-progress="11"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(39.6deg);
+          transform: rotate(39.6deg);
+}
+
+.radial-progress[data-progress="12"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="12"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(21.6deg);
+          transform: rotate(21.6deg);
+}
+
+.radial-progress[data-progress="12"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(43.2deg);
+          transform: rotate(43.2deg);
+}
+
+.radial-progress[data-progress="13"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="13"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(23.4deg);
+          transform: rotate(23.4deg);
+}
+
+.radial-progress[data-progress="13"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(46.8deg);
+          transform: rotate(46.8deg);
+}
+
+.radial-progress[data-progress="14"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="14"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(25.2deg);
+          transform: rotate(25.2deg);
+}
+
+.radial-progress[data-progress="14"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(50.4deg);
+          transform: rotate(50.4deg);
+}
+
+.radial-progress[data-progress="15"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="15"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(27deg);
+          transform: rotate(27deg);
+}
+
+.radial-progress[data-progress="15"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(54deg);
+          transform: rotate(54deg);
+}
+
+.radial-progress[data-progress="16"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="16"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(28.8deg);
+          transform: rotate(28.8deg);
+}
+
+.radial-progress[data-progress="16"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(57.6deg);
+          transform: rotate(57.6deg);
+}
+
+.radial-progress[data-progress="17"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="17"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(30.6deg);
+          transform: rotate(30.6deg);
+}
+
+.radial-progress[data-progress="17"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(61.2deg);
+          transform: rotate(61.2deg);
+}
+
+.radial-progress[data-progress="18"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="18"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(32.4deg);
+          transform: rotate(32.4deg);
+}
+
+.radial-progress[data-progress="18"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(64.8deg);
+          transform: rotate(64.8deg);
+}
+
+.radial-progress[data-progress="19"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="19"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(34.2deg);
+          transform: rotate(34.2deg);
+}
+
+.radial-progress[data-progress="19"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(68.4deg);
+          transform: rotate(68.4deg);
+}
+
+.radial-progress[data-progress="20"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="20"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(36deg);
+          transform: rotate(36deg);
+}
+
+.radial-progress[data-progress="20"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(72deg);
+          transform: rotate(72deg);
+}
+
+.radial-progress[data-progress="21"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="21"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(37.8deg);
+          transform: rotate(37.8deg);
+}
+
+.radial-progress[data-progress="21"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(75.6deg);
+          transform: rotate(75.6deg);
+}
+
+.radial-progress[data-progress="22"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="22"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(39.6deg);
+          transform: rotate(39.6deg);
+}
+
+.radial-progress[data-progress="22"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(79.2deg);
+          transform: rotate(79.2deg);
+}
+
+.radial-progress[data-progress="23"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="23"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(41.4deg);
+          transform: rotate(41.4deg);
+}
+
+.radial-progress[data-progress="23"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(82.8deg);
+          transform: rotate(82.8deg);
+}
+
+.radial-progress[data-progress="24"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="24"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(43.2deg);
+          transform: rotate(43.2deg);
+}
+
+.radial-progress[data-progress="24"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(86.4deg);
+          transform: rotate(86.4deg);
+}
+
+.radial-progress[data-progress="25"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="25"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.radial-progress[data-progress="25"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.radial-progress[data-progress="26"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="26"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(46.8deg);
+          transform: rotate(46.8deg);
+}
+
+.radial-progress[data-progress="26"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(93.6deg);
+          transform: rotate(93.6deg);
+}
+
+.radial-progress[data-progress="27"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="27"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(48.6deg);
+          transform: rotate(48.6deg);
+}
+
+.radial-progress[data-progress="27"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(97.2deg);
+          transform: rotate(97.2deg);
+}
+
+.radial-progress[data-progress="28"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="28"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(50.4deg);
+          transform: rotate(50.4deg);
+}
+
+.radial-progress[data-progress="28"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(100.8deg);
+          transform: rotate(100.8deg);
+}
+
+.radial-progress[data-progress="29"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="29"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(52.2deg);
+          transform: rotate(52.2deg);
+}
+
+.radial-progress[data-progress="29"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(104.4deg);
+          transform: rotate(104.4deg);
+}
+
+.radial-progress[data-progress="30"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="30"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(54deg);
+          transform: rotate(54deg);
+}
+
+.radial-progress[data-progress="30"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(108deg);
+          transform: rotate(108deg);
+}
+
+.radial-progress[data-progress="31"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="31"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(55.8deg);
+          transform: rotate(55.8deg);
+}
+
+.radial-progress[data-progress="31"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(111.6deg);
+          transform: rotate(111.6deg);
+}
+
+.radial-progress[data-progress="32"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="32"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(57.6deg);
+          transform: rotate(57.6deg);
+}
+
+.radial-progress[data-progress="32"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(115.2deg);
+          transform: rotate(115.2deg);
+}
+
+.radial-progress[data-progress="33"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="33"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(59.4deg);
+          transform: rotate(59.4deg);
+}
+
+.radial-progress[data-progress="33"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(118.8deg);
+          transform: rotate(118.8deg);
+}
+
+.radial-progress[data-progress="34"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="34"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(61.2deg);
+          transform: rotate(61.2deg);
+}
+
+.radial-progress[data-progress="34"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(122.4deg);
+          transform: rotate(122.4deg);
+}
+
+.radial-progress[data-progress="35"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="35"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(63deg);
+          transform: rotate(63deg);
+}
+
+.radial-progress[data-progress="35"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(126deg);
+          transform: rotate(126deg);
+}
+
+.radial-progress[data-progress="36"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="36"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(64.8deg);
+          transform: rotate(64.8deg);
+}
+
+.radial-progress[data-progress="36"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(129.6deg);
+          transform: rotate(129.6deg);
+}
+
+.radial-progress[data-progress="37"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="37"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(66.6deg);
+          transform: rotate(66.6deg);
+}
+
+.radial-progress[data-progress="37"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(133.2deg);
+          transform: rotate(133.2deg);
+}
+
+.radial-progress[data-progress="38"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="38"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(68.4deg);
+          transform: rotate(68.4deg);
+}
+
+.radial-progress[data-progress="38"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(136.8deg);
+          transform: rotate(136.8deg);
+}
+
+.radial-progress[data-progress="39"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="39"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(70.2deg);
+          transform: rotate(70.2deg);
+}
+
+.radial-progress[data-progress="39"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(140.4deg);
+          transform: rotate(140.4deg);
+}
+
+.radial-progress[data-progress="40"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="40"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(72deg);
+          transform: rotate(72deg);
+}
+
+.radial-progress[data-progress="40"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(144deg);
+          transform: rotate(144deg);
+}
+
+.radial-progress[data-progress="41"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="41"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(73.8deg);
+          transform: rotate(73.8deg);
+}
+
+.radial-progress[data-progress="41"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(147.6deg);
+          transform: rotate(147.6deg);
+}
+
+.radial-progress[data-progress="42"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="42"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(75.6deg);
+          transform: rotate(75.6deg);
+}
+
+.radial-progress[data-progress="42"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(151.2deg);
+          transform: rotate(151.2deg);
+}
+
+.radial-progress[data-progress="43"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="43"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(77.4deg);
+          transform: rotate(77.4deg);
+}
+
+.radial-progress[data-progress="43"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(154.8deg);
+          transform: rotate(154.8deg);
+}
+
+.radial-progress[data-progress="44"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="44"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(79.2deg);
+          transform: rotate(79.2deg);
+}
+
+.radial-progress[data-progress="44"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(158.4deg);
+          transform: rotate(158.4deg);
+}
+
+.radial-progress[data-progress="45"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="45"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(81deg);
+          transform: rotate(81deg);
+}
+
+.radial-progress[data-progress="45"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(162deg);
+          transform: rotate(162deg);
+}
+
+.radial-progress[data-progress="46"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="46"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(82.8deg);
+          transform: rotate(82.8deg);
+}
+
+.radial-progress[data-progress="46"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(165.6deg);
+          transform: rotate(165.6deg);
+}
+
+.radial-progress[data-progress="47"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="47"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(84.6deg);
+          transform: rotate(84.6deg);
+}
+
+.radial-progress[data-progress="47"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(169.2deg);
+          transform: rotate(169.2deg);
+}
+
+.radial-progress[data-progress="48"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="48"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(86.4deg);
+          transform: rotate(86.4deg);
+}
+
+.radial-progress[data-progress="48"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(172.8deg);
+          transform: rotate(172.8deg);
+}
+
+.radial-progress[data-progress="49"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="49"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(88.2deg);
+          transform: rotate(88.2deg);
+}
+
+.radial-progress[data-progress="49"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(176.4deg);
+          transform: rotate(176.4deg);
+}
+
+.radial-progress[data-progress="50"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="50"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.radial-progress[data-progress="50"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.radial-progress[data-progress="51"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="51"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(91.8deg);
+          transform: rotate(91.8deg);
+}
+
+.radial-progress[data-progress="51"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(183.6deg);
+          transform: rotate(183.6deg);
+}
+
+.radial-progress[data-progress="52"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="52"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(93.6deg);
+          transform: rotate(93.6deg);
+}
+
+.radial-progress[data-progress="52"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(187.2deg);
+          transform: rotate(187.2deg);
+}
+
+.radial-progress[data-progress="53"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="53"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(95.4deg);
+          transform: rotate(95.4deg);
+}
+
+.radial-progress[data-progress="53"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(190.8deg);
+          transform: rotate(190.8deg);
+}
+
+.radial-progress[data-progress="54"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="54"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(97.2deg);
+          transform: rotate(97.2deg);
+}
+
+.radial-progress[data-progress="54"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(194.4deg);
+          transform: rotate(194.4deg);
+}
+
+.radial-progress[data-progress="55"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="55"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(99deg);
+          transform: rotate(99deg);
+}
+
+.radial-progress[data-progress="55"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(198deg);
+          transform: rotate(198deg);
+}
+
+.radial-progress[data-progress="56"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="56"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(100.8deg);
+          transform: rotate(100.8deg);
+}
+
+.radial-progress[data-progress="56"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(201.6deg);
+          transform: rotate(201.6deg);
+}
+
+.radial-progress[data-progress="57"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="57"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(102.6deg);
+          transform: rotate(102.6deg);
+}
+
+.radial-progress[data-progress="57"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(205.2deg);
+          transform: rotate(205.2deg);
+}
+
+.radial-progress[data-progress="58"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="58"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(104.4deg);
+          transform: rotate(104.4deg);
+}
+
+.radial-progress[data-progress="58"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(208.8deg);
+          transform: rotate(208.8deg);
+}
+
+.radial-progress[data-progress="59"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="59"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(106.2deg);
+          transform: rotate(106.2deg);
+}
+
+.radial-progress[data-progress="59"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(212.4deg);
+          transform: rotate(212.4deg);
+}
+
+.radial-progress[data-progress="60"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="60"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(108deg);
+          transform: rotate(108deg);
+}
+
+.radial-progress[data-progress="60"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(216deg);
+          transform: rotate(216deg);
+}
+
+.radial-progress[data-progress="61"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="61"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(109.8deg);
+          transform: rotate(109.8deg);
+}
+
+.radial-progress[data-progress="61"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(219.6deg);
+          transform: rotate(219.6deg);
+}
+
+.radial-progress[data-progress="62"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="62"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(111.6deg);
+          transform: rotate(111.6deg);
+}
+
+.radial-progress[data-progress="62"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(223.2deg);
+          transform: rotate(223.2deg);
+}
+
+.radial-progress[data-progress="63"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="63"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(113.4deg);
+          transform: rotate(113.4deg);
+}
+
+.radial-progress[data-progress="63"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(226.8deg);
+          transform: rotate(226.8deg);
+}
+
+.radial-progress[data-progress="64"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="64"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(115.2deg);
+          transform: rotate(115.2deg);
+}
+
+.radial-progress[data-progress="64"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(230.4deg);
+          transform: rotate(230.4deg);
+}
+
+.radial-progress[data-progress="65"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="65"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(117deg);
+          transform: rotate(117deg);
+}
+
+.radial-progress[data-progress="65"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(234deg);
+          transform: rotate(234deg);
+}
+
+.radial-progress[data-progress="66"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="66"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(118.8deg);
+          transform: rotate(118.8deg);
+}
+
+.radial-progress[data-progress="66"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(237.6deg);
+          transform: rotate(237.6deg);
+}
+
+.radial-progress[data-progress="67"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="67"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(120.6deg);
+          transform: rotate(120.6deg);
+}
+
+.radial-progress[data-progress="67"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(241.2deg);
+          transform: rotate(241.2deg);
+}
+
+.radial-progress[data-progress="68"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="68"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(122.4deg);
+          transform: rotate(122.4deg);
+}
+
+.radial-progress[data-progress="68"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(244.8deg);
+          transform: rotate(244.8deg);
+}
+
+.radial-progress[data-progress="69"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="69"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(124.2deg);
+          transform: rotate(124.2deg);
+}
+
+.radial-progress[data-progress="69"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(248.4deg);
+          transform: rotate(248.4deg);
+}
+
+.radial-progress[data-progress="70"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="70"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(126deg);
+          transform: rotate(126deg);
+}
+
+.radial-progress[data-progress="70"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(252deg);
+          transform: rotate(252deg);
+}
+
+.radial-progress[data-progress="71"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="71"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(127.8deg);
+          transform: rotate(127.8deg);
+}
+
+.radial-progress[data-progress="71"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(255.6deg);
+          transform: rotate(255.6deg);
+}
+
+.radial-progress[data-progress="72"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="72"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(129.6deg);
+          transform: rotate(129.6deg);
+}
+
+.radial-progress[data-progress="72"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(259.2deg);
+          transform: rotate(259.2deg);
+}
+
+.radial-progress[data-progress="73"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="73"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(131.4deg);
+          transform: rotate(131.4deg);
+}
+
+.radial-progress[data-progress="73"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(262.8deg);
+          transform: rotate(262.8deg);
+}
+
+.radial-progress[data-progress="74"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="74"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(133.2deg);
+          transform: rotate(133.2deg);
+}
+
+.radial-progress[data-progress="74"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(266.4deg);
+          transform: rotate(266.4deg);
+}
+
+.radial-progress[data-progress="75"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="75"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.radial-progress[data-progress="75"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.radial-progress[data-progress="76"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="76"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(136.8deg);
+          transform: rotate(136.8deg);
+}
+
+.radial-progress[data-progress="76"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(273.6deg);
+          transform: rotate(273.6deg);
+}
+
+.radial-progress[data-progress="77"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="77"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(138.6deg);
+          transform: rotate(138.6deg);
+}
+
+.radial-progress[data-progress="77"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(277.2deg);
+          transform: rotate(277.2deg);
+}
+
+.radial-progress[data-progress="78"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="78"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(140.4deg);
+          transform: rotate(140.4deg);
+}
+
+.radial-progress[data-progress="78"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(280.8deg);
+          transform: rotate(280.8deg);
+}
+
+.radial-progress[data-progress="79"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="79"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(142.2deg);
+          transform: rotate(142.2deg);
+}
+
+.radial-progress[data-progress="79"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(284.4deg);
+          transform: rotate(284.4deg);
+}
+
+.radial-progress[data-progress="80"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="80"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(144deg);
+          transform: rotate(144deg);
+}
+
+.radial-progress[data-progress="80"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(288deg);
+          transform: rotate(288deg);
+}
+
+.radial-progress[data-progress="81"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="81"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(145.8deg);
+          transform: rotate(145.8deg);
+}
+
+.radial-progress[data-progress="81"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(291.6deg);
+          transform: rotate(291.6deg);
+}
+
+.radial-progress[data-progress="82"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="82"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(147.6deg);
+          transform: rotate(147.6deg);
+}
+
+.radial-progress[data-progress="82"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(295.2deg);
+          transform: rotate(295.2deg);
+}
+
+.radial-progress[data-progress="83"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="83"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(149.4deg);
+          transform: rotate(149.4deg);
+}
+
+.radial-progress[data-progress="83"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(298.8deg);
+          transform: rotate(298.8deg);
+}
+
+.radial-progress[data-progress="84"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="84"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(151.2deg);
+          transform: rotate(151.2deg);
+}
+
+.radial-progress[data-progress="84"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(302.4deg);
+          transform: rotate(302.4deg);
+}
+
+.radial-progress[data-progress="85"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="85"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(153deg);
+          transform: rotate(153deg);
+}
+
+.radial-progress[data-progress="85"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(306deg);
+          transform: rotate(306deg);
+}
+
+.radial-progress[data-progress="86"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="86"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(154.8deg);
+          transform: rotate(154.8deg);
+}
+
+.radial-progress[data-progress="86"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(309.6deg);
+          transform: rotate(309.6deg);
+}
+
+.radial-progress[data-progress="87"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="87"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(156.6deg);
+          transform: rotate(156.6deg);
+}
+
+.radial-progress[data-progress="87"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(313.2deg);
+          transform: rotate(313.2deg);
+}
+
+.radial-progress[data-progress="88"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="88"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(158.4deg);
+          transform: rotate(158.4deg);
+}
+
+.radial-progress[data-progress="88"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(316.8deg);
+          transform: rotate(316.8deg);
+}
+
+.radial-progress[data-progress="89"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="89"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(160.2deg);
+          transform: rotate(160.2deg);
+}
+
+.radial-progress[data-progress="89"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(320.4deg);
+          transform: rotate(320.4deg);
+}
+
+.radial-progress[data-progress="90"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="90"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(162deg);
+          transform: rotate(162deg);
+}
+
+.radial-progress[data-progress="90"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(324deg);
+          transform: rotate(324deg);
+}
+
+.radial-progress[data-progress="91"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="91"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(163.8deg);
+          transform: rotate(163.8deg);
+}
+
+.radial-progress[data-progress="91"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(327.6deg);
+          transform: rotate(327.6deg);
+}
+
+.radial-progress[data-progress="92"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="92"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(165.6deg);
+          transform: rotate(165.6deg);
+}
+
+.radial-progress[data-progress="92"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(331.2deg);
+          transform: rotate(331.2deg);
+}
+
+.radial-progress[data-progress="93"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="93"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(167.4deg);
+          transform: rotate(167.4deg);
+}
+
+.radial-progress[data-progress="93"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(334.8deg);
+          transform: rotate(334.8deg);
+}
+
+.radial-progress[data-progress="94"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="94"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(169.2deg);
+          transform: rotate(169.2deg);
+}
+
+.radial-progress[data-progress="94"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(338.4deg);
+          transform: rotate(338.4deg);
+}
+
+.radial-progress[data-progress="95"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="95"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(171deg);
+          transform: rotate(171deg);
+}
+
+.radial-progress[data-progress="95"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(342deg);
+          transform: rotate(342deg);
+}
+
+.radial-progress[data-progress="96"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="96"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(172.8deg);
+          transform: rotate(172.8deg);
+}
+
+.radial-progress[data-progress="96"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(345.6deg);
+          transform: rotate(345.6deg);
+}
+
+.radial-progress[data-progress="97"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="97"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(174.6deg);
+          transform: rotate(174.6deg);
+}
+
+.radial-progress[data-progress="97"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(349.2deg);
+          transform: rotate(349.2deg);
+}
+
+.radial-progress[data-progress="98"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="98"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(176.4deg);
+          transform: rotate(176.4deg);
+}
+
+.radial-progress[data-progress="98"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(352.8deg);
+          transform: rotate(352.8deg);
+}
+
+.radial-progress[data-progress="99"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="99"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(178.2deg);
+          transform: rotate(178.2deg);
+}
+
+.radial-progress[data-progress="99"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(356.4deg);
+          transform: rotate(356.4deg);
+}
+
+.radial-progress[data-progress="100"] .radial-progress__circle .radial-progress__mask.radial-progress__mask--full, .radial-progress[data-progress="100"] .radial-progress__circle .radial-progress__fill {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.radial-progress[data-progress="100"] .radial-progress__circle .radial-progress__fill.radial-progress__fill--fix {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+/* ==========================================================================
    #HEADER
    ========================================================================== */
 .header {
@@ -483,6 +1616,7 @@ body {
   max-width: 1120px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 7rem;
 }
 
 .causes-charts {
@@ -517,11 +1651,9 @@ body {
 }
 
 .causes-charts__graph {
-  width: 187px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1.25rem;
-  background-color: red;
 }
 
 @media (min-width: 1200px) {
@@ -530,38 +1662,62 @@ body {
   }
 }
 
+.causes-charts__graph.radial-progress,
+.causes-charts__graph .radial-progress__mask,
+.causes-charts__graph .radial-progress__fill {
+  width: 187px;
+  height: 187px;
+}
+
 @media (min-width: 1440px) {
-  .causes-charts__graph {
+  .causes-charts__graph.radial-progress,
+  .causes-charts__graph .radial-progress__mask,
+  .causes-charts__graph .radial-progress__fill {
     width: 272px;
+    height: 272px;
   }
 }
 
-.arc-graph {
-  position: relative;
-  border-radius: 50%;
+.causes-charts__graph .radial-progress__mask {
+  clip: rect(0px, 187px, 187px, 93.5px);
 }
 
-.arc-graph::before {
-  content: '';
-  float: left;
-  padding-top: 100%;
+@media (min-width: 1440px) {
+  .causes-charts__graph .radial-progress__mask {
+    clip: rect(0px, 272px, 272px, 136px);
+  }
 }
 
-.arc-graph::after {
-  content: ' ';
-  display: block;
-  clear: both;
+.causes-charts__graph .radial-progress__mask .radial-progress__fill {
+  clip: rect(0px, 93.5px, 187px, 0px);
 }
 
-.arc-graph__value {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  font-weight: bold;
+@media (min-width: 1440px) {
+  .causes-charts__graph .radial-progress__mask .radial-progress__fill {
+    clip: rect(0px, 136px, 272px, 0px);
+  }
+}
+
+.causes-charts__graph .radial-progress__inset {
+  width: 135px;
+  height: 135px;
+}
+
+@media (min-width: 1440px) {
+  .causes-charts__graph .radial-progress__inset {
+    width: 196px;
+    height: 196px;
+  }
+}
+
+.causes-charts__graph .radial-progress__numbers span {
   font-size: 45px;
-  font-size: 58px;
+}
+
+@media (min-width: 1440px) {
+  .causes-charts__graph .radial-progress__numbers span {
+    font-size: 58px;
+  }
 }
 
 .causes-charts__name {
@@ -625,47 +1781,203 @@ body {
 
 .ethology__title {
   position: relative;
-  margin-bottom: 5.75rem;
+  margin-bottom: 3.125rem;
+  padding-top: 50px;
+}
+
+@media (min-width: 900px) {
+  .ethology__title {
+    margin-bottom: 0;
+  }
+}
+
+.ethology__title .title--smaller {
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 1440px) {
+  .ethology__title .title--smaller {
+    margin-top: 2rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .ethology__title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200vw;
+    height: 93%;
+    border-top: 10px solid #eee;
+    border-left: 10px solid #eee;
+    border-top-left-radius: 500px;
+    border-bottom-left-radius: 500px;
+  }
+}
+
+@media (min-width: 900px) {
+  .ethology__title::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18%;
+    height: 93%;
+    border-bottom: 10px solid #eee;
+    border-left: 10px solid #eee;
+    border-top-left-radius: 500px;
+    border-bottom-left-radius: 500px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .ethology__title::after {
+    width: 24%;
+  }
+}
+
+.ethology__title-arrow {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .ethology__title-arrow {
+    display: inline-block;
+    position: absolute;
+    top: 90%;
+    left: 17%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+}
+
+@media (min-width: 1200px) {
+  .ethology__title-arrow {
+    left: 23.5%;
+  }
 }
 
 .ethology-list {
-  margin-bottom: 100px;
+  position: relative;
+}
+
+@media (min-width: 900px) {
+  .ethology-list {
+    margin-top: -15px;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 98px 46px 112px 46px;
+    border-right: 10px solid #eee;
+    border-bottom: 10px solid #eee;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+}
+
+@media (min-width: 900px) {
+  .ethology-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 22%;
+    height: 100px;
+    -webkit-transform: translate(10px, -10px);
+            transform: translate(10px, -10px);
+    border-top: 10px solid #eee;
+    border-right: 10px solid #eee;
+    border-top-right-radius: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .ethology-list::before {
+    width: 26%;
+  }
+}
+
+@media (min-width: 900px) {
+  .ethology-list::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200vw;
+    height: 100px;
+    -webkit-transform: translate(10px, 10px);
+            transform: translate(10px, 10px);
+    border-bottom: 10px solid #eee;
+    border-right: 10px solid #eee;
+    border-bottom-right-radius: 50px;
+  }
 }
 
 .ethology-list__row {
   position: relative;
-  display: -webkit-box;
-  display: flex;
+}
+
+@media (min-width: 900px) {
+  .ethology-list__row {
+    display: -webkit-box;
+    display: flex;
+  }
 }
 
 .ethology-list__row + .ethology-list__row {
-  margin-top: 3.5rem;
+  margin-top: 2.0625rem;
 }
 
-.ethology-list__row::before {
-  content: '';
-  position: absolute;
-  width: 70%;
-  height: 120px;
-  top: 50%;
-  right: 0;
-  -webkit-transform: translate(-60px, -50%);
-          transform: translate(-60px, -50%);
-  background-color: rgba(0, 0, 0, 0.02);
+@media (min-width: 900px) {
+  .ethology-list__row + .ethology-list__row {
+    margin-top: 3.5rem;
+  }
 }
 
-.ethology-list__row::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: 0;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-left: 60px solid rgba(0, 0, 0, 0.02);
-  border-top: 60px solid transparent;
-  border-bottom: 60px solid transparent;
+@media (min-width: 900px) {
+  .ethology-list__row::before {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 100px;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translate(-50px, -50%);
+            transform: translate(-50px, -50%);
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+}
+
+@media (min-width: 1440px) {
+  .ethology-list__row::before {
+    height: 120px;
+    -webkit-transform: translate(-60px, -50%);
+            transform: translate(-60px, -50%);
+  }
+}
+
+@media (min-width: 900px) {
+  .ethology-list__row::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 50px solid rgba(0, 0, 0, 0.02);
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+  }
+}
+
+@media (min-width: 1440px) {
+  .ethology-list__row::after {
+    border-left: 60px solid rgba(0, 0, 0, 0.02);
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+  }
 }
 
 .ethology-list__row--highlight {
@@ -681,30 +1993,32 @@ body {
   border-left-color: rgba(140, 44, 58, 0.05);
 }
 
-.ethology-list__row--even {
-  -webkit-box-pack: end;
-          justify-content: flex-end;
+@media (min-width: 900px) {
+  .ethology-list__row--even {
+    -webkit-box-pack: end;
+            justify-content: flex-end;
+  }
+  .ethology-list__row--even::before {
+    left: 0;
+    right: auto;
+    -webkit-transform: translate(60px, -50%);
+            transform: translate(60px, -50%);
+  }
+  .ethology-list__row--even::after {
+    left: 0;
+    right: auto;
+    -webkit-transform: translateY(-50%) rotate(0.5turn);
+            transform: translateY(-50%) rotate(0.5turn);
+  }
 }
 
-.ethology-list__row--even::before {
-  left: 0;
-  right: auto;
-  -webkit-transform: translate(60px, -50%);
-          transform: translate(60px, -50%);
-}
-
-.ethology-list__row--even::after {
-  left: 0;
-  right: auto;
-  -webkit-transform: translateY(-50%) rotate(0.5turn);
-          transform: translateY(-50%) rotate(0.5turn);
-}
-
-.ethology-item__inner {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-align: center;
-          align-items: center;
+@media (min-width: 900px) {
+  .ethology-item__inner {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+  }
 }
 
 .ethology-item__number {
@@ -712,6 +2026,13 @@ body {
   font-weight: bold;
   font-size: 3.75rem;
   letter-spacing: -0.03em;
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .ethology-item__number {
+    display: inline-block;
+  }
 }
 
 .ethology-item__text {
@@ -724,8 +2045,40 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 3.125rem;
+  font-size: 2.0625rem;
   background-color: #fff;
+}
+
+@media (max-width: 899.98px) {
+  .ethology-item__text {
+    position: relative;
+    padding: 0.9375rem;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
+    border-bottom: 10px solid currentColor;
+  }
+  .ethology-list__row--highlight .ethology-item__text {
+    border-bottom-color: #8c2c3a;
+  }
+  .ethology-item__text::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 10px);
+            transform: translate(-50%, 10px);
+    width: 0;
+    height: 0;
+    border-top: 14px solid currentColor;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 1440px) {
+  .ethology-item__text {
+    font-size: 3.125rem;
+  }
 }
 
 .ethology-list__row--highlight .ethology-item__number
@@ -739,47 +2092,95 @@ body {
 
 .ethology-item__arrow {
   position: relative;
-  width: 608px;
-  height: 120px;
-  padding-left: 60px;
-  padding-right: 60px;
-  background-color: transparent;
-  -webkit-filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.25));
-          filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.25));
 }
 
-.ethology-item__arrow::before,
-.ethology-item__arrow::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-  width: 0;
-  height: 0;
+@media (min-width: 900px) {
+  .ethology-item__arrow {
+    width: 500px;
+    height: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: transparent;
+    -webkit-filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.25));
+            filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.25));
+  }
+}
+
+@media (min-width: 1440px) {
+  .ethology-item__arrow {
+    width: 608px;
+    height: 120px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media (min-width: 900px) {
+  .ethology-item__arrow::before,
+  .ethology-item__arrow::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    width: 0;
+    height: 0;
+  }
 }
 
 .ethology-item__arrow::before {
-  border-left: 60px solid transparent;
-  border-top: 60px solid #fff;
-  border-bottom: 60px solid #fff;
+  border-left: 50px solid transparent;
+  border-top: 50px solid #fff;
+  border-bottom: 50px solid #fff;
+}
+
+@media (min-width: 1440px) {
+  .ethology-item__arrow::before {
+    border-left: 60px solid transparent;
+    border-top: 60px solid #fff;
+    border-bottom: 60px solid #fff;
+  }
 }
 
 .ethology-item__arrow::after {
   left: auto;
   right: 0;
-  border-left: 60px solid #fff;
-  border-top: 60px solid transparent;
-  border-bottom: 60px solid transparent;
+  border-left: 50px solid #fff;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+}
+
+@media (min-width: 1440px) {
+  .ethology-item__arrow::after {
+    border-left: 60px solid #fff;
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+  }
 }
 
 .ethology-item__tail {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  -webkit-transform: translate(-8px, -50%);
-          transform: translate(-8px, -50%);
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .ethology-item__tail {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 120px;
+    -webkit-transform: translate(-16px, -50%);
+            transform: translate(-16px, -50%);
+  }
+}
+
+@media (min-width: 1440px) {
+  .ethology-item__tail {
+    height: auto;
+    -webkit-transform: translate(-8px, -50%);
+            transform: translate(-8px, -50%);
+  }
 }
 
 .ethology-item--reverse .ethology-item__inner {
@@ -810,13 +2211,26 @@ body {
 .ethology-item--reverse .ethology-item__tail {
   right: 0;
   left: auto;
-  -webkit-transform: translate(8px, -50%) rotate(0.5turn);
-          transform: translate(8px, -50%) rotate(0.5turn);
+  -webkit-transform: translate(16px, -50%) rotate(0.5turn);
+          transform: translate(16px, -50%) rotate(0.5turn);
+}
+
+@media (min-width: 1440px) {
+  .ethology-item--reverse .ethology-item__tail {
+    -webkit-transform: translate(8px, -50%) rotate(0.5turn);
+            transform: translate(8px, -50%) rotate(0.5turn);
+  }
 }
 
 .ethology-details {
   position: relative;
-  padding-top: 76px;
+  padding-top: 40px;
+}
+
+@media (min-width: 900px) {
+  .ethology-details {
+    padding-top: 76px;
+  }
 }
 
 .ethology-details:before {
@@ -827,8 +2241,15 @@ body {
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
   width: 0;
-  height: 76px;
-  border-left: 10px solid #eee;
+  height: 40px;
+  border-left: 4px solid #eee;
+}
+
+@media (min-width: 900px) {
+  .ethology-details:before {
+    border-left-width: 10px;
+    height: 76px;
+  }
 }
 
 .ethology-details__text {
@@ -844,9 +2265,9 @@ body {
 
 .ethology-details__top {
   position: relative;
-  width: 482px;
+  width: 272px;
   margin-top: -5px;
-  margin-bottom: 3.125rem;
+  margin-bottom: 1.875rem;
   overflow: hidden;
 }
 
@@ -862,6 +2283,13 @@ body {
   clear: both;
 }
 
+@media (min-width: 900px) {
+  .ethology-details__top {
+    width: 482px;
+    margin-bottom: 3.125rem;
+  }
+}
+
 .ethology-details__top-value {
   color: #8c2c3a;
   background: -webkit-gradient(linear, left top, left bottom, from(#8c2c3a), to(#cc374c));
@@ -874,9 +2302,15 @@ body {
   -webkit-transform: translate(-45%, 15%);
           transform: translate(-45%, 15%);
   font-weight: bold;
-  font-size: 10rem;
+  font-size: 5rem;
   line-height: 1.15;
   letter-spacing: normal;
+}
+
+@media (min-width: 900px) {
+  .ethology-details__top-value {
+    font-size: 10rem;
+  }
 }
 
 .ethology-details__top-arc {
@@ -887,20 +2321,33 @@ body {
   width: 98%;
   padding-top: 98%;
   border-radius: 50%;
-  border: 10px solid #eee;
+  border: 4px solid #eee;
   border-bottom-style: dashed;
   border-left-style: dashed;
   -webkit-transform: translate(-50%, 0) rotate(45deg);
           transform: translate(-50%, 0) rotate(45deg);
 }
 
+@media (min-width: 900px) {
+  .ethology-details__top-arc {
+    border-width: 10px;
+  }
+}
+
 .ethology-details__text-smaller {
   font-size: calc(1rem + 0.625vw);
+  margin-bottom: 1.875rem;
 }
 
 @media (min-width: 600px) {
   .ethology-details__text-smaller {
     font-size: calc(1rem + 0.97vw);
+  }
+}
+
+@media (min-width: 900px) {
+  .ethology-details__text-smaller {
+    margin-bottom: 1rem;
   }
 }
 
@@ -913,6 +2360,7 @@ body {
 
 .ethology-details__text-bigger {
   font-weight: bold;
+  overflow-wrap: break-word;
   font-size: calc(1rem + 5.3125vw);
 }
 
@@ -949,21 +2397,21 @@ body {
 }
 
 .drugs__heading {
-  margin-bottom: 9.0625rem;
+  margin-bottom: 10.625rem;
   font-size: calc(1rem + 5.3125vw);
   text-align: center;
 }
 
 @media (min-width: 600px) {
   .drugs__heading {
-    font-size: calc(1rem + 3.194vw);
+    font-size: calc(1rem + 2vw);
   }
 }
 
 @media (min-width: 1440px) {
   .drugs__heading {
-    margin-bottom: 13.75rem;
     font-size: 3.875rem;
+    margin-bottom: 13.75rem;
   }
 }
 
@@ -985,17 +2433,21 @@ body {
   max-width: 1204px;
   margin-left: auto;
   margin-right: auto;
-  min-height: 210px;
   margin-top: 2.375rem;
   padding: 1.875rem 1.5rem 1.5rem 1.5rem;
   border-bottom: 12px solid #39434d;
   font-weight: 600;
-  font-size: 1.125rem;
-  font-size: 2.25rem;
+  font-size: calc(1rem + 0.625vw);
   text-align: center;
   background-color: #fff;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
   z-index: 1;
+}
+
+@media (min-width: 1200px) {
+  .drugs-item {
+    padding: 3.5rem 3.25rem 3.25rem 3.25rem;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -1003,70 +2455,135 @@ body {
     margin-top: 3rem;
     padding: 3.5rem 3.25rem 3.25rem 3.25rem;
     border-bottom: 15px solid #39434d;
+    font-size: 2.25rem;
+  }
+}
+
+.drugs-item:first-of-type {
+  padding-bottom: 0.9375rem;
+  padding-top: 90px;
+}
+
+@media (min-width: 1200px) {
+  .drugs-item:first-of-type {
+    padding-bottom: 1.875rem;
+    border-top: 15px solid #39434d;
+  }
+}
+
+.drugs-item:first-of-type::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  width: 0;
+  height: 0;
+  border-right: 95px solid transparent;
+  border-top: 95px solid currentColor;
+  border-left: 95px solid currentColor;
+  border-bottom: 95px solid transparent;
+  border-radius: 50%;
+}
+
+@media (min-width: 1200px) {
+  .drugs-item:first-of-type::before {
+    content: none;
   }
 }
 
 .drugs-item::after {
   content: '';
   position: absolute;
-  top: calc(100% + 15px);
+  top: calc(100% + 12px);
   left: 50%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
   width: 0;
   height: 0;
-  border-top: 28px solid #39434d;
-  border-left: 28px solid transparent;
-  border-right: 28px solid transparent;
+  border-top: 18px solid #39434d;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
 }
 
-.drugs-item:first-of-type {
-  padding-bottom: 0.9375rem;
-  padding-bottom: 1.875rem;
-  border-top: 15px solid #39434d;
+@media (min-width: 1200px) {
+  .drugs-item::after {
+    border-top: 28px solid #39434d;
+    border-left: 28px solid transparent;
+    border-right: 28px solid transparent;
+  }
 }
 
 .drugs-item__more {
   display: inline-block;
-  margin-top: 2rem;
+  margin-top: 0.9375rem;
+}
+
+@media (min-width: 1200px) {
+  .drugs-item__more {
+    margin-top: 2rem;
+  }
 }
 
 .drugs-item__top {
   position: absolute;
   top: 0;
   left: 50%;
-  -webkit-transform: translate(-50%, -100%);
-          transform: translate(-50%, -100%);
-  width: 250px;
-  height: 125px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 190px;
+  height: 190px;
   overflow: hidden;
 }
 
-.drugs-item__top::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  width: 100%;
-  padding-top: 100%;
-  border-radius: 50%;
-  background-color: #39434d;
-  z-index: -1;
+@media (min-width: 1200px) {
+  .drugs-item__top {
+    width: 250px;
+    height: 125px;
+    -webkit-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+  }
+}
+
+@media (min-width: 1200px) {
+  .drugs-item__top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 50%;
+    background-color: #39434d;
+    z-index: -1;
+  }
 }
 
 .drugs-item__top::after {
   content: '';
   position: absolute;
-  top: 15px;
+  top: 24px;
   left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  width: calc(100% - 30px);
-  padding-top: calc(100% - 30px);
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  width: calc(100% - 48px);
+  padding-top: calc(100% - 48px);
   border-radius: 50%;
   background-color: #fff;
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 1200px) {
+  .drugs-item__top::after {
+    top: 15px;
+    width: calc(100% - 30px);
+    padding-top: calc(100% - 30px);
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
 }
 
 .drugs-item__top-text {
@@ -1079,10 +2596,16 @@ body {
   font-size: 3.4375rem;
   line-height: 1.15;
   letter-spacing: -0.075em;
-  font-size: 4.5rem;
+  transform: translate(-50%, -50%);
   z-index: 2;
-  -webkit-transform: translate(-50%, -25%);
-          transform: translate(-50%, -25%);
+}
+
+@media (min-width: 1200px) {
+  .drugs-item__top-text {
+    font-size: 4.5rem;
+    -webkit-transform: translate(-50%, -25%);
+            transform: translate(-50%, -25%);
+  }
 }
 
 .drugs-item--highlight {
@@ -1097,62 +2620,79 @@ body {
 
 .drugs-features {
   position: relative;
-  top: -0.5rem;
   display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
   margin-left: -8px;
   margin-right: -8px;
   margin-bottom: -1.25rem;
-  padding-top: 85px;
+  padding-top: 50px;
 }
 
-.drugs-features::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  width: 0;
-  height: 85px;
-  border-left: 10px solid #eee;
+@media (min-width: 900px) {
+  .drugs-features {
+    padding-top: 85px;
+    top: -0.5rem;
+  }
 }
 
-.drugs-features::after {
-  content: '';
-  position: absolute;
-  top: 85px;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  width: 75%;
-  height: 0;
-  border-top: 10px solid #eee;
+@media (min-width: 900px) {
+  .drugs-features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    width: 0;
+    height: 85px;
+    border-left: 10px solid #eee;
+  }
+}
+
+@media (min-width: 900px) {
+  .drugs-features::after {
+    content: '';
+    position: absolute;
+    top: 85px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    width: 75%;
+    height: 0;
+    border-top: 10px solid #eee;
+  }
 }
 
 .drugs-features__item {
   position: relative;
   width: 100%;
-  width: 25%;
   margin-bottom: 1.25rem;
   padding-left: 8px;
   padding-right: 8px;
-  padding-top: 65px;
   text-align: center;
 }
 
-.drugs-features__item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  width: 0;
-  height: 75px;
-  border-left: 10px solid #eee;
-  z-index: -1;
+@media (min-width: 900px) {
+  .drugs-features__item {
+    width: 25%;
+    padding-top: 65px;
+  }
+}
+
+@media (min-width: 900px) {
+  .drugs-features__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    width: 0;
+    height: 75px;
+    border-left: 10px solid #eee;
+    z-index: -1;
+  }
 }
 
 .drugs-features__icon {
@@ -1162,13 +2702,33 @@ body {
           justify-content: center;
   -webkit-box-align: center;
           align-items: center;
-  width: 160px;
-  height: 160px;
-  margin-bottom: 2.5rem;
+  width: 118px;
+  height: 118px;
+  margin-bottom: 1.25rem;
   border-radius: 50%;
   margin-left: auto;
   margin-right: auto;
   background-color: #8c2c3a;
+}
+
+@media (min-width: 1440px) {
+  .drugs-features__icon {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.drugs-features__icon svg {
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+}
+
+@media (min-width: 1440px) {
+  .drugs-features__icon svg {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 .drugs-features__item:nth-child(2n) .drugs-features__icon {
@@ -1177,8 +2737,13 @@ body {
 
 .drugs-features__text {
   text-transform: none;
-  font-size: 1.75rem;
   overflow-wrap: break-word;
+}
+
+@media (min-width: 1440px) {
+  .drugs-features__text {
+    font-size: 1.75rem;
+  }
 }
 
 .drugs-features__text--accent {
@@ -1223,6 +2788,44 @@ body {
 .research-col--right {
   width: 100%;
   width: 40%;
+}
+
+.research-chart__wrapper {
+  text-transform: none;
+  font-weight: 600;
+}
+
+.research-chart {
+  width: 690px;
+  height: 530px;
+}
+
+.research-chart__labels {
+  display: -webkit-box;
+  display: flex;
+}
+
+.research-chart__labels > * {
+  -webkit-box-flex: 1;
+          flex-grow: 1;
+  text-align: center;
+}
+
+.research-chart__labels > *::before {
+  content: none;
+  margin-right: 20px;
+}
+
+.research-chart__labels > *:first-child::before {
+  background-color: #c3283f;
+}
+
+.research-chart__labels > *:last-child::before {
+  background-color: #39434d;
+}
+
+.research-chart__desc {
+  text-align: center;
 }
 
 .research-list {
@@ -1409,60 +3012,6 @@ body {
     padding-bottom: 4.75rem;
     font-size: 1.25rem;
   }
-}
-
-/* ==========================================================================
-   #MENU
-   ========================================================================== */
-.menu {
-  position: absolute;
-  visibility: hidden;
-  opacity: 0;
-}
-
-/*------------------------------------------*/
-/*  BUTTONS
-/*------------------------------------------*/
-.btn {
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: top;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  -webkit-transition: background-color 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out;
-  cursor: pointer;
-}
-
-.btn:focus {
-  outline: none;
-}
-
-/* ==========================================================================
-   #BULLET-LIST
-   ========================================================================== */
-.bullet-list > * {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-align: baseline;
-          align-items: baseline;
-}
-
-.bullet-list > *::before {
-  content: '';
-  position: relative;
-  top: -0.08em;
-  -webkit-box-flex: 0;
-          flex: none;
-  display: block;
-  width: 15px;
-  height: 15px;
-  margin-right: 30px;
-  background-color: #8c2c3a;
 }
 
 /*# sourceMappingURL=style.css.map */
