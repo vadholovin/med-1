@@ -5,81 +5,165 @@
 .research {
   padding-top: rem(50px);
   padding-top: rem(100px);
+  padding-bottom: 30px;
+  padding-bottom: 75px;
 }
 
 .research__title {
-  margin-bottom: rem(64px);
+  margin-bottom: rem(80px);
 }
 
 .research-row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -15px;
-  margin-right: -15px;
-}
-
-.research-col {
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 .research-col--left {
   width: 100%;
-  width: 60%;
+
+  @include for-size(lg-up) {
+    width: 60%;
+    padding-right: 72px;
+  }
 }
 
 .research-col--right {
   width: 100%;
-  width: 40%;
-}
 
-.research-chart__wrapper {
-  text-transform: none;
-  font-weight: 600;
-  
-  @include for-size(xl) {
-    font-size: rem(26px);
+  @include for-size(lg-up) {
+    width: 40%;
   }
 }
 
-.research-chart {
-  width: 690px;
-  height: 530px;
-}
+.research-graph {
+  text-transform: none;
+  font-weight: 600;
 
-.research-chart__labels {
-  display: flex;
+  .graph {
+    height: 260px;
 
-  > * {
-    flex-grow: 1;
-    text-align: center;
-
-    &::before {
-      content: none;
-      margin-right: 20px;
+    @include for-size(lg-up) {
+      height: 360px;
     }
 
-    &:first-child::before {
-      background-color: $bg-red-light;
+    @include for-size(xl-up) {
+      height: 530px;
     }
-    &:last-child::before {
-      background-color: $bg-grey;
+  }
+
+  .graph__aside {
+    padding-left: 20px;
+    font-size: rem(14px);
+
+    @include for-size(lg-up) {
+      font-size: rem(20px);
+      padding-left: 45px;
     }
 
-    
+    @include for-size(xl-up) {
+      font-size: rem(26px);
+    }
+  }
+
+  .graph__scale {
+    margin-top: -0.5rem;
+    margin-bottom: -0.5rem;
+    font-size: rem(14px);
+
+    @include for-size(lg-up) {
+      margin-top: -1rem;
+      margin-bottom: -1rem;
+      font-size: rem(20px);
+    }
+
+    @include for-size(xl-up) {
+      font-size: rem(26px);
+    }
+  }
+
+  .graph__bar--1 {
+    height: 82%;
+  }
+
+  .graph__bar--2 {
+    height: 52%;
+    background-color: $bg-grey;
+  }
+
+  .graph__foot {
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    @include for-size(sm-up) {
+      display: flex;
+      margin-left: 140px;
+    }
+
+    @include for-size(lg-up) {
+      margin-top: 45px;
+      margin-bottom: 50px;
+    }
+
+    >* {
+
+      @include for-size(sm-up) {
+        flex-grow: 1;
+        justify-content: center;
+      }
+
+      &::before {
+        margin-right: 20px;
+
+        @include for-size(sm-up) {
+          content: none;
+        }
+      }
+
+      &:first-child::before {
+        background-color: $bg-red-light;
+      }
+
+      &:last-child::before {
+        background-color: $bg-grey;
+      }
+    }
+
+    >* + * {
+      
+      @include for-size(xs-only) {
+        margin-top: 10px;
+      }
+    }
   }
 }
 
 .research-chart__desc {
-  text-align: center;
+  text-transform: none;
+  margin-bottom: 20px;
+
+  @include for-size(lg-up) {
+    margin-bottom: 0;
+    margin-left: 140px;
+    text-align: center;
+    font-weight: 600;
+  }
 }
 
 .research-list {
-  font-size: rem(32px);
   text-transform: none;
   line-height: 1.5;
 
-  > * + * {
-    margin-top: 87px;
+  @include for-size(xl-up) {
+    font-size: rem(32px);
+  }
+
+  >*+* {
+    margin-top: 20px;
+
+    @include for-size(xl-up) {
+      margin-top: 87px;
+    }
+    
   }
 }

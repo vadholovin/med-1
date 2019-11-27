@@ -11,13 +11,28 @@
     &::before {
       content: '';
       position: relative;
-      top: -0.08em;
+      top: -0.05em;
       flex: none;
       display: block;
-      width: 15px;
-      height: 15px;
-      margin-right: 30px;
+      width: 11px;
+      height: 11px;
+      margin-right: 20px;
       background-color: $bg-red;
+
+      @include for-size(sm-up) {
+        width: 15px;
+        height: 15px;
+        margin-right: 30px;
+        top: -0.08em;
+      }
     }
   }
 }
+
+.bullet-i--25::before { background-color: $red-25; }
+.bullet-i--50::before { background-color: $red-50; }
+.bullet-i--100::before { background-color: $red-100; }
+.bullet-i--300::before { background-color: $red-300; }
+.bullet-i--500::before { background-color: $red-500; }
+.bullet-i--700::before { background-color: $red-700; }
+.bullet-i--900::before { background-color: $red-900; }

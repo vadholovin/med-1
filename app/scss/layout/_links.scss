@@ -66,7 +66,12 @@
   top: 50%;
   right: 20px;
   transform: translate(0, -50%);
+  width: 18px;
   pointer-events: none;
+
+  @include for-size(sm-up) {
+    width: 24px;
+  }
   
   path {
     fill: currentColor;
@@ -78,7 +83,6 @@
   opacity: 0;
   height: 0;
   overflow: hidden;
-  border-top: 1px solid rgba(#000, 0.1);
   transition:
     visibility $ease-main,
     opacity $ease-main,
@@ -86,7 +90,334 @@
 }
 
 .links-item__content.is-open {
+  // border-top: 1px solid rgba(#000, 0.1);
+  padding: rem(70px 20px 50px 20px);
+  margin-left: -20px;
+  margin-right: -20px;
   visibility: visible;
   opacity: 1;
   height: auto;
+  box-shadow: $shadow;
+  
+  @include for-size(sm-up){
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @include for-size(md-up) {
+    padding: rem(70px 30px 70px 30px);
+  }
+
+  @include for-size(xl-up) {
+    padding: rem(100px 45px 90px 45px);
+  }
+}
+
+.links-item__heading {
+  width: 100%;
+  max-width: 925px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  font-size: rem(24px);
+
+  @include for-size(sm-up) {
+    font-size: calc(1rem + 2vw);
+  }
+
+  @include for-size(xl-up) {
+    font-size: rem(48px);
+    margin-bottom: 108px;
+  }
+}
+
+.chart-names {
+  margin-bottom: rem(50px);
+  margin-top: rem(-12px);
+
+  @include for-size(xl-up) {
+    margin-bottom: rem(60px);
+    margin-top: rem(-30px);
+  }
+}
+
+.chart-name {
+  font-size: rem(12px);
+  display: inline-block;
+  margin-right: 27px;
+  margin-top: rem(12px);
+
+  @include for-size(sm-up) {
+    font-size: 1rem;
+  }
+
+  @include for-size(xl-up) {
+    margin-top: rem(30px);
+    font-size: rem(20px);
+  }
+}
+
+.chart-colors {
+  font-size: rem(18px);
+  margin-top: rem(-20px);
+  margin-bottom: rem(60px);
+
+  @include for-size(sm-up) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include for-size(xl-up) {
+    font-size: rem(20px);
+    margin-bottom: rem(100px);
+  }
+}
+
+.chart-color {
+  margin-top: rem(20px);
+
+  @include for-size(sm-up) {
+    margin-right: 53px;
+  }
+}
+
+.chart-color--1::before { background-color: $bg-red-light; }
+.chart-color--3::before { background-color: $bg-grey; }
+
+.chart-table__wrapper {
+  margin-bottom: rem(30px);
+
+  @include for-size(xl-up) {
+    margin-bottom: rem(70px);
+  }
+}
+
+.chart-table {
+  margin-bottom: 30px;
+}
+
+.links-item__notes {
+  font-size: rem(18px);
+  text-transform: none;
+
+  @include for-size(xl-up) {
+    font-size: rem(20px);
+  }
+}
+
+.chart-graph {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+  margin-bottom: 15px;
+
+  @include for-size(md-up) {
+    margin-bottom: 50px;
+  }
+
+  .graph {
+    min-width: 800px;
+    height: 260px;
+
+    @include for-size(lg-up) {
+      height: 470px;
+    }
+  }
+
+  .graph__scale {
+    margin-top: -0.8rem;
+    margin-bottom: -0.8rem;
+  }
+
+  .graph__body-col--1,
+  .graph__body-col--2,
+  .graph__body-col--6,
+  .graph__body-col--7 {
+    background-color: rgba(#d1d1d1, 0.2);
+  }
+
+  .graph__body-col--3,
+  .graph__body-col--4,
+  .graph__body-col--5 {
+    background-color: rgba(#6C6C6C, 0.22);
+  }
+
+  .graph__bar {
+    width: 25%;
+    box-shadow: $shadow;
+  }
+
+  .graph__bar--1 { background-color: $bg-red; }
+  .graph__bar--2 { background-color: $bg-red-light; }
+  .graph__bar--3 { background-color: $bg-grey; }
+
+  .graph__body-col--1 {
+    .graph__bar--1 { height: 3.2%; }
+    .graph__bar--2 { height: 87.8%; }
+    .graph__bar--3 { height: 75.5%; }
+  }
+
+  .graph__body-col--2 {
+    .graph__bar--1 { height: 4.6%; }
+    .graph__bar--2 { height: 93%; }
+    .graph__bar--3 { height: 93.6%; }
+  }
+
+  .graph__body-col--3 {
+    .graph__bar--2 { height: 12.3%; }
+    .graph__bar--3 { height: 33%; }
+  }
+
+  .graph__body-col--4 {
+    .graph__bar--2 { height: 7%; }
+    .graph__bar--3 { height: 22.3%; }
+  }
+
+  .graph__body-col--5 {
+    .graph__bar--2 { height: 5.3%; }
+    .graph__bar--3 { height: 23.4%; }
+  }
+
+  .graph__body-col--6 {
+    .graph__bar--1 { height: 23.6%; }
+    .graph__bar--2 { height: 17.5%; }
+    .graph__bar--3 { height: 59.6%; }
+  }
+
+  .graph__body-col--7 {
+    .graph__bar--1 { height: 77.1%; }
+    .graph__bar--2 { height: 26.3%; }
+    .graph__bar--3 { height: 86.1%; }
+  }
+
+  .graph__types {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translate(0, -108%);
+    padding-left: 16px;
+    display: flex;
+
+    > * {
+      width: 28%;
+      text-align: center;
+      font-weight: 600;
+
+      &:nth-child(2) {
+        width: 44%;
+      }
+    }
+  }
+
+  .graph__foot {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: 10px;
+    padding-left: 16px;
+    display: flex;
+
+    > * {
+      flex-grow: 1;
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+}
+
+.links-item--2 {
+
+  .title {
+    margin-bottom: rem(60px);
+
+    @include for-size(xl-up) {
+      margin-bottom: 100px;
+    }
+  }
+
+  .flex-row {
+    align-items: center;
+    width: 100%;
+    max-width: 1010px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: rem(60px);
+
+    @include for-size(xl-up) {
+      margin-bottom: 100px;
+    }
+  }
+
+  .cell {
+    width: 100%;
+
+    @include for-size(sm-up) {
+      width: 50%;
+    }
+  }
+
+  .pie {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+
+    @include for-size(sm-up) {
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .pie--1 { max-width: 463px; }
+  .pie--2 { max-width: 441px; }
+  .pie--3 { max-width: 454px; }
+  .pie--4 { max-width: 408px; }
+  .pie--5 { max-width: 416px; }
+  .pie--6 { max-width: 454px; }
+
+  .pie-labels {
+    max-width: 470px;
+    text-transform: none;
+    font-size: rem(18px);
+
+    @include for-size(sm-up) {
+      padding-left: 12%;
+    }
+
+    @include for-size(md-up) {
+      font-size: rem(20px);
+    }
+
+    @include for-size(lg-up) {
+      font-size: rem(24px);
+    }
+
+    > * + * {
+      margin-top: 12px;
+
+      @include for-size(xl-up) {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .links-item__info {
+    font-size: rem(18px);
+    text-align: center;
+
+    @include for-size(md-up) {
+      font-size: rem(20px);
+    }
+
+    @include for-size(lg-up) {
+      font-size: rem(24px);
+    }
+  }
 }

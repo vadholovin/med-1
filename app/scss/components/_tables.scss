@@ -1,0 +1,57 @@
+/* ==========================================================================
+   #TABLE
+   ========================================================================== */
+
+.table {
+
+  th {
+    color: #fff;
+  }
+
+  th, td {
+    font-weight: 600;
+    font-size: rem(16px);
+    text-transform: none;
+    vertical-align: middle;
+
+    @include for-size(lg-up) {
+      font-size: rem(22px);
+    }
+  }
+
+  thead {
+    th {
+      width: 25%;
+      background-color: $bg-grey;
+    }
+
+    th:first-child {
+      padding: rem(22px 22px 22px 33px);
+    }
+
+    th:not(:first-child) {
+      text-align: center;
+      padding: rem(22px);
+      box-shadow: $shadow;
+    }
+  }
+
+  tbody {
+    th {
+      padding: rem(18px 18px 18px 33px);
+      background-color: $bg-red;
+    }
+
+    tr:nth-child(2n) th {
+      background-color: $bg-red-light;
+    }
+
+    td {
+      text-align: center;
+    }
+
+    tr:nth-child(2n + 1) {
+      background-color: rgba(#4B545D, 0.1);
+    }
+  }
+}

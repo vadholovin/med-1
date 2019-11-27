@@ -15,7 +15,8 @@
 
 .drugs__heading {
   margin-bottom: rem(170px);
-  font-size: calc(1rem + 5.3125vw);
+  // font-size: calc(1rem + 5.3125vw);
+  font-size: calc(1rem + 4.375vw);
   text-align: center;
   
   @include for-size(sm-up) {

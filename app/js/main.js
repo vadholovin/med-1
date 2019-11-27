@@ -21,20 +21,3 @@ $(document).ready(function () {
 });
 
 
-(function () {
-  var researchCanvas = document.getElementById('researchChart');
-  var barChart = new Chart(researchCanvas, {
-    type: 'bar',
-    data: {
-      labels: ['Доксициклин', 'Минолексин'],
-      datasets: [{
-        label: '',
-        data: [82, 52],
-        backgroundColor: [
-          '#c3283f',
-          '#39434d',
-        ]
-      }]
-    }
-  });
-})();
