@@ -21,3 +21,17 @@ $(document).ready(function () {
 });
 
 
+/**
+ * Modals
+ */
+$(document).ready(function () {
+  $.modal.defaults.showClose = false;
+
+  $('.js-open-modal').click(function(event) {
+    $(this).modal({
+      fadeDuration: 250
+    });
+    return false;
+  });
+  
+});

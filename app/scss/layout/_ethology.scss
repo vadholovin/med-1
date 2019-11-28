@@ -3,7 +3,9 @@
    ========================================================================== */
 
 .ethology {
+  width: 100vw;
   padding-bottom: rem(70px);
+  overflow-x: hidden;
 
   @include for-size(xl-up) {
     padding-bottom: rem(100px);
@@ -407,6 +409,7 @@
 .ethology-details {
   position: relative;
   padding-top: 40px;
+  overflow-wrap: break-word;
 
   @include for-size(md-up) {
     padding-top: 76px;
@@ -517,6 +520,7 @@
 .ethology-details__text-bigger {
   font-weight: bold;
   overflow-wrap: break-word;
+  word-break: break-all;
   font-size: calc(1rem + 5.3125vw);
   
   @include for-size(sm-up) {
