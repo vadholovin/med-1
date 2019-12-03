@@ -4,9 +4,13 @@
 
 .research {
   padding-top: rem(50px);
-  padding-top: rem(100px);
-  padding-bottom: 30px;
-  padding-bottom: 75px;
+  padding-bottom: rem(40px);
+  
+
+  @include for-size(lg-up) {
+    padding-top: rem(100px);
+    padding-bottom: rem(75px);
+  }
 }
 
 .research__title {
@@ -156,6 +160,20 @@
 
   @include for-size(xl-up) {
     font-size: rem(32px);
+  }
+
+  > * {
+
+    @include for-size(xs-only) {
+      font-weight: bold;
+    }
+  }
+
+  > *::before {
+
+    @include for-size(xs-only) {
+      content: none;
+    }
   }
 
   >*+* {

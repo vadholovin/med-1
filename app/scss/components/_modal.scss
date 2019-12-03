@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .modal {
-  z-index: 2;
+  z-index: 1000;
   max-width: 1240px;
   width: 98%;
   padding: 0;
@@ -16,8 +16,18 @@
   }
 }
 
+.modal__content {
+  position: relative;
+}
+
 .blocker {
+  z-index: 999;
   background-color: rgba(0,0,0,0.35);
+
+  @include for-size(xs-only) {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
 }
 
 .modal__head {
@@ -28,19 +38,15 @@
 
 .modal__close {
   position: absolute;
-  top: 4px;
-  right: 0;
+  top: 20px;
+  right: 20px;
   width: 44px;
   height: 44px;
   padding: 0;
   border: 0;
   border-radius: 0;
   box-shadow: none;
-
-  @media (min-width: 48em) {
-    right: 15px;
-    top: 10px;
-  }
+  cursor: pointer;
 
   &:hover {
     opacity: 0.7;
@@ -57,6 +63,7 @@
   width: 20px;
   height: 1px;
   border-top: 2px solid #000;
+  pointer-events: none;
 }
 
 .modal__close::before {
@@ -68,9 +75,17 @@
 }
 
 .modal__body {
-  padding: 24px 24px 40px 24px;
+  padding: 60px 24px 40px 24px;
 
-  @media (min-width: 48em) {
-    padding: 24px 30px 40px 30px;
+  @include for-size(md-up) {
+    padding: 60px 30px 40px 30px;
+  }
+
+  @include for-size(lg-up) {
+    padding-top: 80px;
+  }
+
+  @include for-size(xl-up) {
+    padding-top: 100px;
   }
 }

@@ -69,7 +69,7 @@
 }
 
 .drugs-item:first-of-type {
-  padding-bottom: rem(15px);
+  // padding-bottom: rem(15px);
   padding-top: 90px;
 
   @include for-size(lg-up) {
@@ -116,12 +116,16 @@
   }
 }
 
-.drugs-item__more {
-  display: inline-block;
-  margin-top: rem(15px);
+.drugs-item {
+  
+  .button {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: rem(15px);
 
-  @include for-size(lg-up) {
-    margin-top: rem(32px);
+    @include for-size(lg-up) {
+      margin-top: rem(32px);
+    }
   }
 }
 
@@ -201,6 +205,10 @@
   &::after {
     border-top-color: #c3283f;
   }
+}
+
+.drugs-item__text {
+  overflow-wrap: break-word;
 }
 
 

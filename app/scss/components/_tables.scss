@@ -3,6 +3,8 @@
    ========================================================================== */
 
 .table {
+  table-layout: auto;
+  width: 100%;
 
   th {
     color: #fff;
@@ -13,6 +15,7 @@
     font-size: rem(16px);
     text-transform: none;
     vertical-align: middle;
+    overflow-wrap: break-word;
 
     @include for-size(lg-up) {
       font-size: rem(22px);
@@ -21,7 +24,6 @@
 
   thead {
     th {
-      width: 25%;
       background-color: $bg-grey;
     }
 

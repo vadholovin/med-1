@@ -36,31 +36,6 @@
               <path d="M114.928 6.42227C114.928 4.89093 113.659 3.68021 112.108 3.68021C110.556 3.68021 109.322 4.92681 109.322 6.42227C109.322 7.95417 110.556 9.20021 112.108 9.20021C113.659 9.20021 114.928 7.95417 114.928 6.42227Z" fill="#39434D"/>
             </svg>
           </a>
-
-          <nav class="header__nav">
-            <ul class="header__menu menu">
-              <li class="menu__item">
-                <a href="">Пункт 1</a>
-              </li>
-              <li class="menu__item">
-                <a href="">Пункт 2</a>
-              </li>
-              <li class="menu__item">
-                <a href="">Пункт 3</a>
-              </li>
-              <li class="menu__item">
-                <a href="">Пункт 4</a>
-              </li>
-            </ul>
-
-            <button class="hamburger" aria-expanded="false" aria-label="Открыть меню">
-              <svg class="hamburger-icon" viewBox="0 0 35 29" aria-hidden="true" focusable="false" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line y1="1.5" x2="35" y2="1.5" stroke="#39434D" stroke-width="3"/>
-                <line y1="14.5" x2="35" y2="14.5" stroke="#39434D" stroke-width="3"/>
-                <line y1="27.5" x2="35" y2="27.5" stroke="#39434D" stroke-width="3"/>
-              </svg>
-            </button>
-          </nav>
         </div>
       </div>
     </header>
@@ -180,9 +155,16 @@
 
           <div class="causes__foot">
             <p class="causes__notes">*По данным опроса практикующих врачей-урологов на портале doktornarabote.ru, Ноябрь 2019, 111 респондентов</p>
-            <a href="#modal-block-2" class="causes__link link-underline highlight js-open-modal" rel="modal:open" role="button">
-              Узнать полные результаты опроса
-            </a>
+            <div class="button__wrapper">
+              <a href="#modal-block-2"
+                class="button button--primary js-open-modal"
+                rel="modal:open"
+                role="button">
+                <span class="button__inner">
+                  Узнать полные результаты опроса
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -302,9 +284,16 @@
                 <sup>1</sup>
               </span>
               <br>
-              <a href="#modal-block-1" class="drugs-item__more link-underline highlight js-open-modal" rel="modal:open" role="button">
-                Узнать подробнее
-              </a>
+              <div class="button__wrapper">
+                <a href="#modal-block-1"
+                  class="button button--secondary js-open-modal"
+                  rel="modal:open"
+                  role="button">
+                  <span class="button__inner">
+                    Узнать подробнее
+                  </span>
+                </a>
+              </div>
             </div>
             <div class="drugs-item">
               <span class="drugs-item__text">
@@ -504,6 +493,44 @@
         </div>
       </section>
 
+      <section class="notes">
+        <div class="notes__top">
+          <div class="container">
+            <h2 class="sr-only">Примечания</h2>
+            <ol class="notes__list">
+              <li>Foschi C, Salvo M, Galli S, Moroni A, Cevenini R, Marangoni A. Prevalence and antimicrobial resistance of genital Mollicutes in Italy over a two-year period. New Microbiologica. 2018; 41(2): 153-158.</li> 
+  
+              <li>EDITOR'S CHOICE Reviving old antibiotics. Theuretzbacher U, et. l.,  Journal of Antimicrobial Chemotherapy, Volume 70, Issue 8, 1 August 2015, Pages 2177–2181, <a href="https://doi.org/10.1093/jac/dkv157" rel="nofollow noopener" target="_blank">https://doi.org/10.1093/jac/dkv157</a></li> 
+  
+              <li>Федеральные  клинические рекомендации по ведению больных хламидийной инфекцией. Акушерствоигинекология. 2016; 4: 57-63.</li>
+  
+              <li>Lanjouw E, Ouburg S, HJ de Vries A Stary, Radcliffe K et al. 2015 European guideline on the management of Chlamydia trachomatis infections. InternationalJournalofSTD & AIDS. 2015; 0(0): 1–16. DOI: 10.1177/0956462415618837</li> 
+              
+              <li>Федеральные клинические рекомендации по ведению больных урогенитальными заболеваниями, вызванными Mycoplasma genitalium. Акушерство и гинекология. 2016. 4: 64-69.</li>
+  
+              <li>Минолексин в этиотропной терапии хламидийной инфекции урогенитальной локализации, Снарская Е. С., Минакова М. Э., Российский журнал кожных и венерических болезней. 2014. Т.17 №4. С. 58-64</li> 
+  
+              <li><a href="http://grls.rosminzdrav.ru" rel="nofollow noopener" target="_blank">http://grls.rosminzdrav.ru</a> от 05.04.2019.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="notes__foot">
+          <div class="container">
+            <figure class="notes-img">
+              <picture>
+                <source srcset="img/general/product-img.webp 1x,
+                                img/general/product-img@2x.webp 2x"
+                        type="image/webp">
+                <img src="img/general/product-img.png"
+                    srcset="img/general/product-img@2x.png 2x"
+                    alt="упаковка Минолексина">
+              </picture>
+            </figure>
+          </div>
+        </div>
+      </section>
+
     </main>
 
 
@@ -511,23 +538,7 @@
       <div class="footer-top">
         <div class="container">
           <div class="footer-top__row">
-            <div class="logo logo--footer">
-              <svg class="logo-icon" viewBox="0 0 165 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 18.8088L18.1184 3.35441C23.2641 -1.03483 30.759 -1.06179 35.9131 2.95191C31.2288 1.13463 25.6992 1.88011 21.6351 5.34667L3.51672 20.801L0 18.8088Z" fill="#EF7C00"/>
-                <path d="M6.66864 22.5866L24.7869 7.13236C29.9326 2.74304 37.4275 2.71617 42.5816 6.72987C37.8972 4.91259 32.3678 5.65806 28.3035 9.12462L10.1853 24.579L6.66864 22.5866Z" fill="#EF7C00"/>
-                <path d="M13.3363 26.3649L31.4546 10.9102C36.6002 6.5211 44.0952 6.49415 49.2493 10.5077C44.5651 8.69056 39.0355 9.43594 34.9713 12.9026L16.853 28.3571L13.3363 26.3649Z" fill="#EF7C00"/>
-                <path d="M57.7423 27.1907L39.6235 42.6457C34.4777 47.0348 26.9829 47.0618 21.8287 43.0483C26.513 44.8653 32.0425 44.1201 36.1068 40.6534L54.2259 25.1984L57.7423 27.1907Z" fill="#C70B6F"/>
-                <path d="M51.0749 23.413L32.9561 38.8679C27.8103 43.2571 20.3152 43.2842 15.1613 39.2703C19.8454 41.0877 25.375 40.3421 29.4391 36.8757L47.5582 21.4205L51.0749 23.413Z" fill="#C70B6F"/>
-                <path d="M44.4061 19.6348L26.2871 35.0899C21.1413 39.4793 13.6464 39.5061 8.49249 35.4925C13.1767 37.3099 18.7063 36.5643 22.7704 33.0976L40.8894 17.6425L44.4061 19.6348Z" fill="#C70B6F"/>
-                <path d="M85.0288 19.3199C85.0288 14.7606 82.9786 11.9599 76.0939 11.9599C73.3404 11.9599 70.4901 12.6033 68.3393 13.3628L68.812 17.881C70.6196 16.8675 73.2011 16.2343 75.1374 16.2343C78.2356 16.2343 79.311 17.374 79.311 19.5695V20.7098C72.0397 20.7098 66.9618 23.3692 66.9618 28.3937C66.9618 31.7717 69.1849 34.04 73.0572 34.04C76.2415 34.04 78.9739 32.0916 80.0066 29.7274L79.9565 29.9561C79.7844 31.054 79.4225 32.8152 79.4225 34.04H85.0288V19.3199ZM79.311 24.721C79.311 27.254 77.4609 29.7872 74.75 29.7872C73.1586 29.7872 72.2117 28.9009 72.2117 27.5493C72.2117 25.8608 73.5024 24.214 79.311 24.214V24.721Z" fill="#39434D"/>
-                <path d="M104.65 33.0535L104.209 28.3804C103.017 28.9811 101.385 29.2806 99.8846 29.2806C96.1346 29.2806 94.6783 26.794 94.6783 23.1501C94.6783 19.1195 96.4873 16.5473 100.061 16.5473C101.474 16.5473 102.841 16.8901 104.033 17.3191L104.606 12.5599C103.194 12.1738 101.606 11.9599 100.106 11.9599C92.3401 11.9599 88.7658 17.062 88.7658 23.7075C88.7658 30.9529 92.5604 34.04 98.6495 34.04C100.988 34.04 103.15 33.6108 104.65 33.0535Z" fill="#39434D"/>
-                <path d="M139.223 18.5149C139.223 14.8908 137.665 11.9599 132.82 11.9599C129.316 11.9599 126.807 13.6677 125.509 16.125L125.465 16.0836C125.683 15.0006 126.142 12.9179 126.142 11.9599H120.534V34.04H126.142V23.1149C126.142 19.4915 128.278 16.4166 131.09 16.4166C133.123 16.4166 133.617 17.6139 133.617 19.7799V34.04H139.223V18.5149Z" fill="#39434D"/>
-                <path d="M164.45 22.5944C164.45 15.2911 160.601 11.9599 154.637 11.9599C148.25 11.9599 143.894 16.7431 143.894 23.3628C143.894 30.9223 147.742 34.04 153.707 34.04C160.009 34.04 164.45 29.2565 164.45 22.5944ZM158.867 22.893C158.867 27.2071 156.837 29.385 154.172 29.385C151.042 29.385 149.476 27.1641 149.476 22.8075C149.476 18.4518 151.845 16.5723 154.257 16.5723C157.428 16.5723 158.867 18.7932 158.867 22.893Z" fill="#39434D"/>
-                <path d="M114.928 34.04V11.9599H109.322V34.04H114.928Z" fill="#39434D"/>
-                <path d="M114.928 6.42227C114.928 4.89093 113.659 3.68021 112.108 3.68021C110.556 3.68021 109.322 4.92681 109.322 6.42227C109.322 7.95417 110.556 9.20021 112.108 9.20021C113.659 9.20021 114.928 7.95417 114.928 6.42227Z" fill="#39434D"/>
-              </svg>
-            </div>
-
+            <div class="footer-top__name">Минолексин<sup>®</sup></div>
             <p class="footer-top__info">№ ЛП-001666, 2012-04-20</p>
           </div>
         </div>
@@ -535,20 +546,71 @@
 
       <div class="footer-mid">
         <div class="container">
-          <p class="footer-mid__info">Имеются противопоказания. Ознакомьтесь с инструкцией</p>
+            <p>
+              <b>Минолексин® Регистрационный номер:</b> ЛП 001666-190517
+              Международное непатентованное или группировочное название: миноциклин.
+              Торговое наименование: Минолексин® Лекарственная форма: капсулы
+            </p>
+            
+            <p>
+              <b>Состав:</b> Действующее вещество: миноциклина гидрохлорида диrидрат (в пересчете на миноциклин) 50 мг или 100 мг.
+              <b>Фармакологическая группа:</b> Антибиотик - тетрациклин. <b>Код АТХ:</b>  J01AA08 <b>Показания к применению:</b> Миноциклина
+              гидрохлорид применяется для лечения следующих заболеваний при условии чувствительности патогенных
+              микроорганизмов: Негонококковый уретрит, инфекции канала шейки матки и заднего прохода у взрослых и др. Для
+              предотвращения возникновения резистентности применение миноциклина рекомендуется в соответствии с
+              результатами лабораторных исследований, включая серотипирование и определение чувствительности возбудителей.
+              По этой же причине не рекомендуется использование миноциклина в профилактических целях в случае высокого риска
+              заболевания менингококковым менингитом. <b>Противопоказания:</b> гиперчувствительность к миноциклину, тетрациклинам
+              и другим компонентам препарата; порфирия; тяжелая печеночная и почечная недостаточность; лейкопения;
+              беременность; грудное вскармливание; системная красная волчанка; детский возраст до 8 лет (период развития
+              зубов); одновременный прием с изотретиноином; дефицит лактазы, непереносимость лактозы, глюкозо-rалактозная
+              мальабсорбция. <b>Способ применения и дозы:</b> Максимальная суточная доза не должна превышать 400 мг. Инфекции
+              мочеполовой системы и аногенитальной области, вызванные хламидиями и уреаплазмами: 100 мг (1 капсула по 100 мг
+              или 2 капсулы по 50 мг) каждые 12 часов в течение 7-10 дней. Воспалительные заболевания органов малого таза у
+              женщин в острой стадии: 100 мг (1 капсула по 100 мг или 2 капсулы по 50 мг) каждые 12 ч, иногда в сочетании с
+              цефалоспоринами. Первичный сифилис у пациентов с повышенной чувствительностью к пенициллинам: 100 мг (1
+              капсула по 100 мг или 2 капсулы по 50 мг) два раза в сутки в течение 10 - 15 дней. Гонорея: 100 мг (1 капсула по 100 мг или 2 капсулы по 50 мг) два раза в сутки в течение 4-5 дней, либо однократно 300 мг. Неосложненные гонококковые
+              инфекции (исключая уретриты и аноректальные инфекции) у мужчин: начальная доза - 200 мг (2 капсулы по 100 мг или
+              4 капсулы по 50 мг), поддерживающая - 100 мг (1 капсула по 100 мг или 2 капсулы по 50 мг) через каждые 12 часов в
+              течение минимум 4-х дней с последующей микробиологической оценкой выздоровления через 2-3 дня после
+              прекращения приема препарата. Неосложненный гонококковый уретрит у мужчин: 100 мг (1 капсула по 100 мг или 2
+              капсулы по 50 мг) каждые 12 часов в течение 5 дней. <b>Побочное действие:</b> Со стороны пищеварительной системы:
+              анорексия, тошнота, рвота, диарея, диспепсия. Со стороны мочеполовои системы: кандидозный вульвовагинит,
+              интерстициальный нефрит. Со стороны кожных покровов: облысение, узловатая эритема, пигментация ногтей, кожный
+              зуд, токсический эпидермальный некроз. Со стороны дыхательных путей: одышка, бронхоспазм, обострения астмы,
+              пневмония. Со стороны костно-мышечной системы: артралгия, артрит, ограничение подвижности и отеки суставов.
+              Аллергические реакции: крапивница, ангионевротическая эдема, олиартралгия, анафилактические реакции (в т.ч. шок).
+              Со стороны органов кроветворения: агранулоцитоз, гемолитическая анемия. Со стороны центральной нервной системы:
+              судороги, головокружения, онемения. 
+            </p>
+            
+            <p>
+              <b>
+                Наименование и адрес юридического лица, на имя которого выдано
+                регистрационное удостоверение/организация, принимающая претензии:
+              </b> АО «АВВА РУС», Россия, 121614, г.
+              Москва, ул. Крылатские Холмы, д.30, корп. 9. Тел/факс: (495) 956-75-54. avva.com.ru
+            </p>
+
+            <div class="footer-mid__foot">
+              <p>
+                <b>Производитель/организация, принимающая претензии:</b> 
+                ОАО «АВВА РУС», Россия, 610044, Кировская обл., г. Киров, ул. Луганская, 
+                д. 53а, тел.: (8332) 25-12-29, (495) 956-75-54, avva.com.ru 
+                ecoantibiotic.ru
+              </p> 
+  
+              <p>
+                <b>Организация, уполномоченная принимать претензии от потребителей на территории РФ:</b> ООО «Ацино Рус», 127055, г. Москва, ул. Палиха, д. 10, стр. 3, оф. 2.1, тел. + 7 (495) 502-92-47, 
+                e-mail: info_rus@acino.swiss, safety_rus@acino.swiss
+              </p>
+            </div>
         </div>
       </div>
 
       <div class="footer-bottom">
         <div class="container">
-          <p class="footer-bottom__info">
-            Производитель/организация, принимающая претензии:
-            ОАО «АВВА РУС», Россия, 610044, Кировская обл., г. Киров, ул. Луганская,
-            д. 53а, тел.: (8332) 25-12-29, (495) 956-75-54, avva.com.ru
-            ecoantibiotic.ru
-            Организация, уполномоченная принимать претензии от потребителей на территории РФ: ООО «Ацино Рус», 127055, г. Москва, ул. Палиха, д. 10, стр. 3, оф. 2.1, тел. + 7 (495) 502-92-47,
-            e-mail: info_rus@acino.swiss, safety_rus@acino.swiss
-          </p>
+          <p>Имеются противопоказания. Ознакомьтесь с инструкцией</p>
         </div>
       </div>
     </footer>
@@ -560,9 +622,7 @@
 
   <div class="modal js-modal" id="modal-block-1">
     <div class="modal__content">
-      <div class="modal__head">
-        <a class="modal__close" href="#close" rel="modal:close" role="button" area-label="Закрыть попап"></a>
-      </div>
+      <a class="modal__close" href="#close" rel="modal:close" role="button" area-label="Закрыть попап"></a>
       <div class="modal__body modal-block-1">
         
         <h2 class="links-item__heading title">
@@ -572,95 +632,97 @@
           <span class="title--smaller">при урогенитальных инфекциях по данным исследования Foshci и соавт.</span>
         </h2>
 
-        <div class="chart-graph graph__wrapper">
-          <div class="graph">
-            <div class="graph__scale">
-              <span>100,00%</span>
-              <span>80,00%</span>
-              <span>60,00%</span>
-              <span>40,00%</span>
-              <span>20,00%</span>
-              <span>0,00%</span>
-            </div>
-            <div class="graph__body">
-              <div class="graph__body-col graph__body-col--1">
-                <span class="graph__bar graph__bar--1"></span>
-                <span class="graph__bar graph__bar--2"></span>
-                <span class="graph__bar graph__bar--3"></span>
+        <div class="chart-wrapper">
+          <div class="chart-graph graph__wrapper">
+            <div class="graph">
+              <div class="graph__scale">
+                <span>100,00%</span>
+                <span>80,00%</span>
+                <span>60,00%</span>
+                <span>40,00%</span>
+                <span>20,00%</span>
+                <span>0,00%</span>
               </div>
-              <div class="graph__body-col graph__body-col--2">
-                <span class="graph__bar graph__bar--1"></span>
-                <span class="graph__bar graph__bar--2"></span>
-                <span class="graph__bar graph__bar--3"></span>
-              </div>
-
-              <div class="graph__body-col graph__body-col--3">
-                <span class="graph__bar graph__bar--2"></span>
-                <span class="graph__bar graph__bar--3"></span>
-              </div>
-              <div class="graph__body-col graph__body-col--4">
-                <span class="graph__bar graph__bar--2"></span>
-                <span class="graph__bar graph__bar--3"></span>
-              </div>
-              <div class="graph__body-col graph__body-col--5">
-                <span class="graph__bar graph__bar--2"></span>
-                <span class="graph__bar graph__bar--3"></span>
-              </div>
-
-              <div class="graph__body-col graph__body-col--6">
-                <span class="graph__bar graph__bar--1"></span>
-                <span class="graph__bar graph__bar--2"></span>
-                <span class="graph__bar graph__bar--3"></span>
-              </div>
-              <div class="graph__body-col graph__body-col--7">
-                <span class="graph__bar graph__bar--1"></span>
-                <span class="graph__bar graph__bar--2"></span>
-                <span class="graph__bar graph__bar--3"></span>
-              </div>
-
-              <ul class="graph__types">
-                <li>Макролиды</li>
-                <li>Тетрациклины</li>
-                <li>Цефалоспорины</li>
-              </ul>
-
-              <ul class="graph__foot">
-                <li>01</li>
-                <li>02</li>
-                <li>03</li>
-                <li>04</li>
-                <li>05</li>
-                <li>06</li>
-                <li>07</li>
-              </ul>
-
-              <div class="graph__body-lines">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+              <div class="graph__body">
+                <div class="graph__body-col graph__body-col--1">
+                  <span class="graph__bar graph__bar--1"></span>
+                  <span class="graph__bar graph__bar--2"></span>
+                  <span class="graph__bar graph__bar--3"></span>
+                </div>
+                <div class="graph__body-col graph__body-col--2">
+                  <span class="graph__bar graph__bar--1"></span>
+                  <span class="graph__bar graph__bar--2"></span>
+                  <span class="graph__bar graph__bar--3"></span>
+                </div>
+  
+                <div class="graph__body-col graph__body-col--3">
+                  <span class="graph__bar graph__bar--2"></span>
+                  <span class="graph__bar graph__bar--3"></span>
+                </div>
+                <div class="graph__body-col graph__body-col--4">
+                  <span class="graph__bar graph__bar--2"></span>
+                  <span class="graph__bar graph__bar--3"></span>
+                </div>
+                <div class="graph__body-col graph__body-col--5">
+                  <span class="graph__bar graph__bar--2"></span>
+                  <span class="graph__bar graph__bar--3"></span>
+                </div>
+  
+                <div class="graph__body-col graph__body-col--6">
+                  <span class="graph__bar graph__bar--1"></span>
+                  <span class="graph__bar graph__bar--2"></span>
+                  <span class="graph__bar graph__bar--3"></span>
+                </div>
+                <div class="graph__body-col graph__body-col--7">
+                  <span class="graph__bar graph__bar--1"></span>
+                  <span class="graph__bar graph__bar--2"></span>
+                  <span class="graph__bar graph__bar--3"></span>
+                </div>
+  
+                <ul class="graph__types">
+                  <li>Макролиды</li>
+                  <li>Тетрациклины</li>
+                  <li>Цефалоспорины</li>
+                </ul>
+  
+                <ul class="graph__foot">
+                  <li>01</li>
+                  <li>02</li>
+                  <li>03</li>
+                  <li>04</li>
+                  <li>05</li>
+                  <li>06</li>
+                  <li>07</li>
+                </ul>
+  
+                <div class="graph__body-lines">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
               </div>
             </div>
           </div>
+  
+          <ul class="chart-names">
+            <li class="chart-name"><span class="highlight">01.</span> Азитромицин</li>
+            <li class="chart-name"><span class="highlight">02.</span> Рокситромицин</li>
+            <li class="chart-name"><span class="highlight">03.</span> Джозамицин</li>
+            <li class="chart-name"><span class="highlight">04.</span> Миноциклин</li>
+            <li class="chart-name"><span class="highlight">05.</span> Доксициклин</li>
+            <li class="chart-name"><span class="highlight">06.</span> Офлоксацин</li>
+            <li class="chart-name"><span class="highlight">07.</span> Ципрофлоксацин</li>
+          </ul>
+  
+          <ul class="chart-colors bullet-list">
+            <li class="chart-color chart-color--1">Ureaplasma spp.</li>
+            <li class="chart-color chart-color--2">M. hominis</li>
+            <li class="chart-color chart-color--3">Ureaplasma spp. + M. hominis</li>
+          </ul>
         </div>
-
-        <ul class="chart-names">
-          <li class="chart-name"><span class="highlight">01.</span> Азитромицин</li>
-          <li class="chart-name"><span class="highlight">02.</span> Рокситромицин</li>
-          <li class="chart-name"><span class="highlight">03.</span> Джозамицин</li>
-          <li class="chart-name"><span class="highlight">04.</span> Миноциклин</li>
-          <li class="chart-name"><span class="highlight">05.</span> Доксициклин</li>
-          <li class="chart-name"><span class="highlight">06.</span> Офлоксацин</li>
-          <li class="chart-name"><span class="highlight">07.</span> Ципрофлоксацин</li>
-        </ul>
-
-        <ul class="chart-colors bullet-list">
-          <li class="chart-color chart-color--1">Ureaplasma spp.</li>
-          <li class="chart-color chart-color--2">M. hominis</li>
-          <li class="chart-color chart-color--3">Ureaplasma spp. + M. hominis</li>
-        </ul>
 
         <div class="chart-table__wrapper table-responsive">
           <table class="chart-table table">
@@ -724,9 +786,139 @@
             </tbody>
           </table>
         </div>
+
+        <div class="drug-tables">
+          <table class="drug-table table">
+            <thead>
+              <tr>
+                <th colspan="2">Ureaplasma spp. % резистентных штаммов</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Азитромицин</td>
+                <td>3,2%</td>
+              </tr>
+              <tr>
+                <td>Рокситромицин</td>
+                <td>4,6%</td>
+              </tr>
+              <tr>
+                <td>Джозамицин</td>
+                <td>0,3%</td>
+              </tr>
+              <tr>
+                <td>Миноциклин</td>
+                <td>0,9%</td>
+              </tr>
+              <tr>
+                <td>Доксициклин</td>
+                <td>0,9%</td>
+              </tr>
+              <tr>
+                <td>Офлоксацин</td>
+                <td>26,3%</td>
+              </tr>
+              <tr>
+                <td>Ципрофлоксацин</td>
+                <td>77,1%</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="drug-table table">
+            <thead>
+              <tr>
+                <th colspan="2">M. hominis % резистентных штаммов</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Азитромицин</td>
+                <td>87,7%</td>
+              </tr>
+              <tr>
+                <td>Рокситромицин</td>
+                <td>93%</td>
+              </tr>
+              <tr>
+                <td>Джозамицин</td>
+                <td>12,3%</td>
+              </tr>
+              <tr>
+                <td>Миноциклин</td>
+                <td>7%</td>
+              </tr>
+              <tr>
+                <td>Доксициклин</td>
+                <td>5,3%</td>
+              </tr>
+              <tr>
+                <td>Офлоксацин</td>
+                <td>17,5%</td>
+              </tr>
+              <tr>
+                <td>Ципрофлоксацин</td>
+                <td>26,3%</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="drug-table table">
+            <thead>
+              <tr>
+                <th colspan="2">Ureaplasma spp. + 
+                    M. hominis % резистентных штаммов</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Азитромицин</td>
+                <td>75,5%</td>
+              </tr>
+              <tr>
+                <td>Рокситромицин</td>
+                <td>93,6%</td>
+              </tr>
+              <tr>
+                <td>Джозамицин</td>
+                <td>33%</td>
+              </tr>
+              <tr>
+                <td>Миноциклин</td>
+                <td>22,3%</td>
+              </tr>
+              <tr>
+                <td>Доксициклин</td>
+                <td>23,4%</td>
+              </tr>
+              <tr>
+                <td>Офлоксацин</td>
+                <td>59,6%</td>
+              </tr>
+              <tr>
+                <td>Ципрофлоксацин</td>
+                <td>86,1%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <p class="links-item__notes">
-          1. Адаптировано из: Foschi C, Salvo M, Galli S, Moroni A, Cevenini R, Marangoni A. Prevalence and antimicrobial resistance of genital Mollicutes in Italy over a two-year period. New Microbiologica. 2018; 41(2): 153-158.
+          <b>1.</b> Адаптировано из: Foschi C, Salvo M, Galli S, Moroni A, Cevenini R, Marangoni A. Prevalence and antimicrobial resistance of genital Mollicutes in Italy over a two-year period. New Microbiologica. 2018; 41(2): 153-158.
         </p>
+
+        <div class="button__wrapper">
+          <a class="modal__button-close button button--primary"
+            href="#close"
+            rel="modal:close"
+            role="button"
+            area-label="Закрыть попап">
+            <span class="button__inner">
+              Вернуться на главную
+            </span>
+          </a>
+        </div>
 
       </div>
     </div>
@@ -735,9 +927,7 @@
 
   <div class="modal js-modal" id="modal-block-2">
     <div class="modal__content">
-      <div class="modal__head">
-        <a class="modal__close" href="#close" rel="modal:close" role="button" area-label="Закрыть попап"></a>
-      </div>
+      <a class="modal__close" href="#close" rel="modal:close" role="button" area-label="Закрыть попап"></a>
       <div class="modal__body modal-block-2">
         
         <h4 class="links-item__heading title">
@@ -776,8 +966,8 @@
             <ul class="pie-labels bullet-list">
               <li class="bullet-i--900">Ureoplasma urealyticum</li>
               <li class="bullet-i--700">Chlamydia trachomatis</li>
-              <li class="bullet-i--500">Mycoplasma genitalium или Mycoplasma hominis </li>
-              <li class="bullet-i--300">Другие возбудители НГУ (укажите, какие)</li>
+              <li class="bullet-i--500">Mycoplasma genitalium <br> или Mycoplasma hominis </li>
+              <li class="bullet-i--300">Другие возбудители <br> НГУ (укажите, какие)</li>
               <li class="bullet-i--100">Trichomonas vaginalis</li>
             </ul>
           </div>
@@ -810,7 +1000,7 @@
           </div>
 
           <div class="cell">
-            <ul class="pie-labels bullet-list">
+            <ul class="pie-labels bullet-list text-center">
               <li class="bullet-i--900">Да</li>
               <li class="bullet-i--300">Нет</li>
             </ul>
@@ -853,7 +1043,7 @@
             <ul class="pie-labels bullet-list">
               <li class="bullet-i--900">Chlamydia trachomatis</li>
               <li class="bullet-i--700">Ureoplasma urealyticum</li>
-              <li class="bullet-i--500">Mycoplasma genitalium или Mycoplasma
+              <li class="bullet-i--500">Mycoplasma genitalium <br> или Mycoplasma
                 hominis</li>
               <li class="bullet-i--300">Trichomonas vaginalis</li>
               <li class="bullet-i--100">Другие возбудители НГУ</li>
@@ -953,18 +1143,18 @@
 
           <div class="cell">
             <ul class="pie-labels bullet-list">
-              <li class="bullet-i--900">Наличие доказательной
+              <li class="bullet-i--900">Наличие <br> доказательной
                 базы</li>
-              <li class="bullet-i--700">Переносимость терапии</li>
-              <li class="bullet-i--500">Резистентность к
+              <li class="bullet-i--700">Переносимость <br> терапии</li>
+              <li class="bullet-i--500">Резистентность <br> к
                 антибиотику </li>
               <li class="bullet-i--300">Наличие данной
                 молекулы 
                 в стандартах
                 терапии </li>
               <li class="bullet-i--100">Стоимость терапии </li>
-              <li class="bullet-i--50">?</li>
-              <li class="bullet-i--25">?</li>
+              <li class="bullet-i--50">Известность бренда</li>
+              <li class="bullet-i--25">Другое</li>
             </ul>
           </div>
         </div>
@@ -997,7 +1187,7 @@
           </div>
 
           <div class="cell">
-            <ul class="pie-labels bullet-list">
+            <ul class="pie-labels bullet-list text-center">
               <li class="bullet-i--900">Да</li>
               <li class="bullet-i--700">Нет</li>
             </ul>
@@ -1008,6 +1198,18 @@
           *По данным опроса практикующих врачей-урологов на портале doktornarabote.ru, Ноябрь 2019, 111
           респондентов
         </p>
+
+        <div class="button__wrapper">
+          <a class="modal__button-close button button--primary"
+            href="#close"
+            rel="modal:close"
+            role="button"
+            area-label="Закрыть попап">
+            <span class="button__inner">
+              Вернуться на главную
+            </span>
+          </a>
+        </div>
 
       </div>
     </div>

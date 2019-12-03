@@ -92,6 +92,11 @@ input, textarea, select, button {
   font-family: inherit;
 }
 
+.wrapper {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .container {
   width: 100%;
 
@@ -242,4 +247,8 @@ input, textarea, select, button {
 .flex-row {
   display: flex;
   flex-wrap: wrap;
+}
+
+.text-center {
+  text-align: center;
 }

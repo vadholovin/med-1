@@ -6,7 +6,7 @@
 .modal {
   .links-item__heading {
     width: 100%;
-    max-width: 925px;
+    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 40px;
@@ -23,77 +23,73 @@
   }
 }
 
-.modal-block-1,
-.modal-block-2 {
-  padding: rem(30px 20px 50px 20px);
+.modal__button-close {
+  width: auto;
+  margin-top: 40px;
+  font-size: rem(14px);
+  
+
+  @include for-size(sm-up) {
+    font-size: rem(16px);
+  }
 
   @include for-size(md-up) {
-    padding: rem(30px 30px 70px 30px);
+    margin-top: 60px;
+    font-size: rem(20px);
+  }
+
+  @include for-size(lg-up) {
+    font-size: rem(22px);
   }
 
   @include for-size(xl-up) {
-    padding: rem(60px 45px 90px 45px);
+    margin-top: 108px;
+  }
+
+  .button__inner {
+    padding-left: rem(20px);
+    padding-right: rem(20px);
+
+    @include for-size(lg-up) {
+      padding-left: rem(40px);
+      padding-right: rem(40px);
+    }
+  }
+  
+}
+
+
+.modal-block-1,
+.modal-block-2 {
+  padding: rem(80px 12px 50px 12px);
+
+  @include for-size(md-up) {
+    padding: rem(80px 30px 70px 30px);
+  }
+
+  @include for-size(xl-up) {
+    padding: rem(100px 45px 90px 45px);
   }
 }
 
 
 .modal-block-1 {
-  
-  .chart-names {
-    margin-bottom: rem(50px);
-    margin-top: rem(-12px);
-  
-    @include for-size(xl-up) {
-      margin-bottom: rem(60px);
-      margin-top: rem(-30px);
+
+  .chart-wrapper {
+    display: none;
+
+    @include for-size(md-up) {
+      display: block;
     }
   }
-  
-  .chart-name {
-    font-size: rem(12px);
-    display: inline-block;
-    margin-right: 27px;
-    margin-top: rem(12px);
-  
-    @include for-size(sm-up) {
-      font-size: 1rem;
-    }
-  
-    @include for-size(xl-up) {
-      margin-top: rem(30px);
-      font-size: rem(20px);
-    }
-  }
-  
-  .chart-colors {
-    font-size: rem(18px);
-    margin-top: rem(-20px);
-    margin-bottom: rem(60px);
-  
-    @include for-size(sm-up) {
-      display: flex;
-      flex-wrap: wrap;
-    }
-  
-    @include for-size(xl-up) {
-      font-size: rem(20px);
-      margin-bottom: rem(100px);
-    }
-  }
-  
-  .chart-color {
-    margin-top: rem(20px);
-  
-    @include for-size(sm-up) {
-      margin-right: 53px;
-    }
-  }
-  
-  .chart-color--1::before { background-color: $bg-red-light; }
-  .chart-color--3::before { background-color: $bg-grey; }
   
   .chart-table__wrapper {
-    margin-bottom: rem(30px);
+    display: none;
+
+    @include for-size(md-up) {
+      display: block;
+      margin-bottom: rem(30px);
+    }
   
     @include for-size(xl-up) {
       margin-bottom: rem(70px);
@@ -102,6 +98,12 @@
   
   .chart-table {
     margin-bottom: 30px;
+
+    thead {
+      th {
+        width: 25%;
+      }
+    }
   }
   
   .links-item__notes {
@@ -110,6 +112,50 @@
   
     @include for-size(xl-up) {
       font-size: rem(20px);
+    }
+  }
+
+  .drug-tables {
+    display: block;
+    margin-top: 100px;
+    margin-bottom: 50px;
+
+    @include for-size(md-up) {
+      display: none;
+    }
+  }
+
+  .drug-table {
+
+    + .drug-table {
+      margin-top: 40px;
+    }
+
+    thead {
+      th {
+        text-align: center;
+        padding: rem(22px);
+        box-shadow: $shadow;
+      }
+    }
+
+    tbody {
+      td {
+        padding: rem(18px);
+      }
+
+      td:first-child {
+        min-width: 180px;
+        width: 70%;
+        text-align: left;
+        padding-right: rem(8px);
+      }
+
+      td:last-child {
+        width: 30%;
+        padding-left: rem(8px);
+        padding-right: rem(18px);
+      }
     }
   }
   
@@ -238,6 +284,59 @@
       }
     }
   }
+
+  .chart-names {
+    margin-bottom: rem(50px);
+    margin-top: rem(-12px);
+  
+    @include for-size(xl-up) {
+      margin-bottom: rem(60px);
+      margin-top: rem(-30px);
+    }
+  }
+  
+  .chart-name {
+    font-size: rem(12px);
+    display: inline-block;
+    margin-right: 27px;
+    margin-top: rem(12px);
+  
+    @include for-size(sm-up) {
+      font-size: 1rem;
+    }
+  
+    @include for-size(xl-up) {
+      margin-top: rem(30px);
+      font-size: rem(20px);
+    }
+  }
+  
+  .chart-colors {
+    font-size: rem(18px);
+    margin-top: rem(-20px);
+    margin-bottom: rem(60px);
+  
+    @include for-size(sm-up) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    @include for-size(xl-up) {
+      font-size: rem(20px);
+      margin-bottom: rem(100px);
+    }
+  }
+  
+  .chart-color {
+    margin-top: rem(20px);
+  
+    @include for-size(sm-up) {
+      margin-right: 53px;
+    }
+  }
+  
+  .chart-color--1::before { background-color: $bg-red-light; }
+  .chart-color--3::before { background-color: $bg-grey; }
 }
 
 .modal-block-2 {
@@ -253,7 +352,6 @@
   .flex-row {
     align-items: center;
     width: 100%;
-    max-width: 1010px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: rem(60px);
@@ -265,10 +363,6 @@
 
   .cell {
     width: 100%;
-
-    @include for-size(sm-up) {
-      width: 50%;
-    }
   }
 
   .pie {
@@ -277,10 +371,8 @@
     margin-right: auto;
     margin-bottom: 40px;
 
-    @include for-size(sm-up) {
-      margin-left: 0;
-      margin-right: 0;
-      margin-bottom: 0;
+    @include for-size(lg-up) {
+      margin-bottom: 80px;
     }
   }
 
@@ -292,13 +384,9 @@
   .pie--6 { max-width: 454px; }
 
   .pie-labels {
-    max-width: 470px;
     text-transform: none;
     font-size: rem(18px);
-
-    @include for-size(sm-up) {
-      padding-left: 12%;
-    }
+    margin-top: -12px;
 
     @include for-size(md-up) {
       font-size: rem(20px);
@@ -306,14 +394,26 @@
 
     @include for-size(lg-up) {
       font-size: rem(24px);
+      margin-top: -30px;
     }
 
-    > * + * {
-      margin-top: 12px;
+    @include for-size(xl-up) {
+      margin-top: -60px;
+    }
+  }
 
-      @include for-size(xl-up) {
-        margin-top: 30px;
-      }
+  .pie-labels > li {
+    display: inline-flex;
+    margin-right: 30px;
+    margin-top: 12px;
+
+    @include for-size(lg-up) {
+      margin-top: 30px;
+      margin-right: 50px;
+    }
+    
+    @include for-size(xl-up) {
+      margin-top: 60px;
     }
   }
 
