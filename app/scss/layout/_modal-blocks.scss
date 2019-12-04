@@ -10,7 +10,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 40px;
-    font-size: rem(24px);
+    font-size: rem(22px);
   
     @include for-size(sm-up) {
       font-size: calc(1rem + 2vw);
@@ -405,7 +405,7 @@
   .pie-labels > li {
     display: inline-flex;
     margin-right: 30px;
-    margin-top: 12px;
+    margin-top: 16px;
 
     @include for-size(lg-up) {
       margin-top: 30px;

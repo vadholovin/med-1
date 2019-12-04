@@ -286,8 +286,7 @@ input, textarea, select, button {
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
-  font-size: calc(1rem + 4.375vw);
-  overflow-wrap: break-word;
+  font-size: calc(1rem + 4vw);
 }
 
 @media (min-width: 600px) {
@@ -2826,9 +2825,7 @@ body {
 
 .ethology-details__text-bigger {
   font-weight: bold;
-  overflow-wrap: break-word;
-  word-break: break-all;
-  font-size: calc(1rem + 5.3125vw);
+  font-size: calc(1rem + 5vw);
 }
 
 @media (min-width: 600px) {
@@ -3647,7 +3644,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
-  font-size: 1.5rem;
+  font-size: 1.375rem;
 }
 
 @media (min-width: 600px) {
@@ -4151,7 +4148,7 @@ body {
   display: -webkit-inline-box;
   display: inline-flex;
   margin-right: 30px;
-  margin-top: 12px;
+  margin-top: 16px;
 }
 
 @media (min-width: 1200px) {

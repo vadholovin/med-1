@@ -519,9 +519,8 @@
 
 .ethology-details__text-bigger {
   font-weight: bold;
-  overflow-wrap: break-word;
-  word-break: break-all;
-  font-size: calc(1rem + 5.3125vw);
+  // font-size: calc(1rem + 5.3125vw);
+  font-size: calc(1rem + 5vw);
   
   @include for-size(sm-up) {
     font-size: calc(1rem + 3.194vw);

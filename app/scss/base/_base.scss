@@ -209,8 +209,9 @@ input, textarea, select, button {
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
-  font-size: calc(1rem + 4.375vw);
-  overflow-wrap: break-word;
+  // font-size: calc(1rem + 4.375vw);
+  font-size: calc(1rem + 4vw);
+  // overflow-wrap: break-word;
   
   @include for-size(sm-up) {
     font-size: calc(1rem + 3.194vw);
@@ -219,6 +220,33 @@ input, textarea, select, button {
   @include for-size(xl-up) {
     font-size: rem(62px);
   }
+}
+
+.title--bigger {
+  // -ms-word-break: break-all;
+  // word-break: break-all;
+  // -webkit-hyphens: auto;
+  // -webkit-hyphenate-limit-before: 3;
+  // -webkit-hyphenate-limit-after: 3;
+  // -webkit-hyphenate-limit-chars: 6 3 3;
+  // -webkit-hyphenate-limit-lines: 2;
+  // -webkit-hyphenate-limit-last: always;
+  // -webkit-hyphenate-limit-zone: 8%;
+  // -moz-hyphens: auto;
+  // -moz-hyphenate-limit-chars: 6 3 3;
+  // -moz-hyphenate-limit-lines: 2;
+  // -moz-hyphenate-limit-last: always;
+  // -moz-hyphenate-limit-zone: 8%;
+  // -ms-hyphens: auto;
+  // -ms-hyphenate-limit-chars: 6 3 3;
+  // -ms-hyphenate-limit-lines: 2;
+  // -ms-hyphenate-limit-last: always;
+  // -ms-hyphenate-limit-zone: 8%;
+  // hyphens: auto;
+  // hyphenate-limit-chars: 6 3 3;
+  // hyphenate-limit-lines: 2;
+  // hyphenate-limit-last: always;
+  // hyphenate-limit-zone: 8%;
 }
 
 .title--smaller {
